@@ -2,7 +2,8 @@
     height: 275px;
     width: 250px;
     background-color: rgb(255, 255, 255);
-    box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3);
+    box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3),
+    5px 5px 0 rgba(0, 0, 0, .3);
     border-radius: 20px;
 }
 .Cards img{
@@ -12,7 +13,9 @@
 }
 .Info{
     background-color: rgb(236, 230, 230);
-    height: 96px;
+    height: 87px;
+    border-radius: 20px;
+    padding: 0 5px;
 }
 .inventario{
     padding: 1rem;
