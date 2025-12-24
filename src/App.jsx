@@ -3,6 +3,7 @@ import './App.css'
 import { BarNav } from './components/Barnav/NavegationBar'
 // import { Inventory } from './components/Show/inventory'
 import elementos from './mocks/Elementos.json'
+import { Cards } from './components/Cards/Cards'
 
 export function App () {
   const elementss = elementos.inventory
@@ -11,17 +12,20 @@ export function App () {
   return (
     <main>
       <BarNav />
-      {
-        hasinventory
-          ? (
-              elementss.map(ele => (
-                <li key={ele.id}>
-                  <p>{ele.name}</p>
-                </li>
-              ))
-            )
-          : <h1> No hay inventario</h1>
-      }
+      <Cards />
+      <div className='show'>
+        {
+          hasinventory
+            ? (
+                elementss.map(ele => (
+                  <li key={ele.id}>
+                    <p>{ele.name}</p>
+                  </li>
+                ))
+              )
+            : <h1> No hay inventario</h1>
+        }
+      </div>
     </main>
   )
 }

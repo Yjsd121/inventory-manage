@@ -1,4 +1,10 @@
 main{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
+}
+.show{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
 }
