@@ -1,0 +1,26 @@
+.main {
+  background-color: #010b1a;
+}
+
+.nav {
+  height: 50px;
+  height: 100vh;
+  width: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav a {
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #c3d1e8;
+  transition: all .1s;
+}
+
+.right a:hover,
+.nav a:hover {
+  cursor: pointer;
+  font-size: 1.25rem;
+}
