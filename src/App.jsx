@@ -12,17 +12,16 @@ export function App () {
   return (
     <main>
       <BarNav />
-      <Cards />
       <div className='show'>
+        <div className='searching'>
+          <input type='text' />
+          <button>
+            Search
+          </button>
+        </div>
         {
           hasinventory
-            ? (
-                elementss.map(ele => (
-                  <li key={ele.id}>
-                    <p>{ele.name}</p>
-                  </li>
-                ))
-              )
+            ? <Cards Item={elementss} />
             : <h1> No hay inventario</h1>
         }
       </div>

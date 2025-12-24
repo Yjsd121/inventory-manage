@@ -2,7 +2,7 @@
     height: 275px;
     width: 250px;
     background-color: rgb(255, 255, 255);
-    box-shadow: inset 1px 2px 6px 6px rgba(0, 0, 0, .3);
+    box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3);
     border-radius: 20px;
 }
 .Cards img{
@@ -13,4 +13,11 @@
 .Info{
     background-color: rgb(236, 230, 230);
     height: 96px;
+}
+.inventario{
+    padding: 1rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1.5rem;
 }

@@ -2,14 +2,22 @@ import './Cards.css'
 
 export function Cards ({ Item }) {
   return (
-    <div className='Cards'>
-      <img src='/react.svg' />
-      <div className='Info'>
-        <p>Nombre del producto</p>
-        <p>Fecha</p>
-        <p>Cantidad</p>
-        <p>Precio/u</p>
-      </div>
-    </div>
+    <ul className='inventario'>
+      {
+        Item.map(item => (
+          <li key={item.id}>
+            <div className='Cards'>
+              <img src='/react.svg' />
+              <div className='Info'>
+                <p>Name: {item.name}</p>
+                <p>{item.status}</p>
+                <p>Cant:{item.quantity}</p>
+                <p>${item.unitPrice}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
   )
 }
