@@ -1,76 +1,35 @@
-main{
-    display: inline-flex;
-    flex-direction: row;
-}
-.show{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 90vw;
+main {
+  display: inline-flex;
+  flex-direction: row;
 }
 
-.searching input{
-    height: 30px;
-    padding: 0 15px;
-    width: 200px;
-    border-radius: 20px;
-    background: transparent;
-    border: none;
-    box-shadow: inset 0 1px 6px;
-    margin: 0 20px;
-    outline: none;
+.searching input {
+  height: 30px;
+  padding: 0 15px;
+  width: 200px;
+  border-radius: 20px;
+  background: transparent;
+  border: none;
+  box-shadow: inset 0 1px 6px;
+  margin: 0 20px;
+  outline: none;
 }
 
-.searching button{
-    width: 70px;
-    height: 25px;
-    border-radius: 10px;
-    border: none;
-    background-color: white;
-    box-shadow: 0 3px 0 rgba(0,0,0, .3);
-    transition: .1s;
-}
-.searching button:active{
-    box-shadow: 0 0 0 rgba(0,0,0, .3);
-    transform: translateY(2px);
+.searching button,
+.orders button {
+  width: 150px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(230, 222, 222);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, .3);
+  transition: .1s;
+
 }
 
-.orders{
-    display: flex;
-    justify-content: space-around ;
-    align-items: center;
-    width: 90vw;
-    
+.searching button:active,
+.ShowOrders button:active {
+  box-shadow: 0 0 0 rgba(0, 0, 0, .3);
+  transform: translateY(2px);
 }
-.ShowOrders{
-    background-color: white;
-    width: 675px;
-    height: auto;
-    padding: 25px 10px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.ShowOrders h2{
-    text-align: center;
-    margin-bottom: 5px;
-}
-.ShowOrders button{
-    max-width: 100px;
-}
-.Labels_inputs{
-    display: flex;
-    justify-content: space-between;
-}
-.order-card{
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(240, 237, 237);
-    border: solid 1px rgba(196, 188, 188,.4);
-    height: 15px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}
+

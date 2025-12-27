@@ -1,67 +1,67 @@
 {
-    "orders": [
-        {
-            "id": "ORD-001",
-            "customerName": "Carlos Mendoza",
-            "product": "Laptop Dell Inspiron 15",
-            "quantity": 1,
-            "phone": "8881-2345",
-            "address": "Colonia Centroamérica, Managua",
-            "status": "pending"
-        },
-        {
-            "id": "ORD-002",
-            "customerName": "María López",
-            "product": "Mouse Logitech M185",
-            "quantity": 2,
-            "phone": "8576-9912",
-            "address": "Barrio Monseñor Lezcano, Managua",
-            "status": "delivered"
-        },
-        {
-            "id": "ORD-003",
-            "customerName": "José Ramírez",
-            "product": "Teclado Mecánico Redragon K552",
-            "quantity": 1,
-            "phone": "8123-4456",
-            "address": "Ciudad Sandino, Managua",
-            "status": "pending"
-        },
-        {
-            "id": "ORD-004",
-            "customerName": "Ana Castillo",
-            "product": "Monitor Samsung 24\"",
-            "quantity": 1,
-            "phone": "8999-7721",
-            "address": "Reparto San Juan, Masaya",
-            "status": "cancelled"
-        },
-        {
-            "id": "ORD-005",
-            "customerName": "Luis González",
-            "product": "Silla Ergonómica",
-            "quantity": 1,
-            "phone": "8221-9087",
-            "address": "Barrio El Calvario, León",
-            "status": "pending"
-        },
-        {
-            "id": "ORD-006",
-            "customerName": "Daniela Torres",
-            "product": "Disco SSD 1TB Kingston",
-            "quantity": 3,
-            "phone": "8700-1144",
-            "address": "Colonia Jardines de Veracruz, Managua",
-            "status": "delivered"
-        },
-        {
-            "id": "ORD-007",
-            "customerName": "Ricardo Flores",
-            "product": "Mouse Logitech M185",
-            "quantity": 4,
-            "phone": "8612-5566",
-            "address": "Barrio Guadalupe, Estelí",
-            "status": "pending"
-        }
-    ]
+  "orders": [
+    {
+      "id": "ORD-001",
+      "customerName": "Carlos Mendoza",
+      "product": "Laptop Dell Inspiron 15",
+      "quantity": 1,
+      "phone": "8881-2345",
+      "address": "Colonia Centroamérica, Managua",
+      "status": "pending"
+    },
+    {
+      "id": "ORD-002",
+      "customerName": "María López",
+      "product": "Mouse Logitech M185",
+      "quantity": 2,
+      "phone": "8576-9912",
+      "address": "Barrio Monseñor Lezcano, Managua",
+      "status": "delivered"
+    },
+    {
+      "id": "ORD-003",
+      "customerName": "José Ramírez",
+      "product": "Teclado Mecánico Redragon K552",
+      "quantity": 1,
+      "phone": "8123-4456",
+      "address": "Ciudad Sandino, Managua",
+      "status": "pending"
+    },
+    {
+      "id": "ORD-004",
+      "customerName": "Ana Castillo",
+      "product": "Monitor Samsung 24\"",
+      "quantity": 1,
+      "phone": "8999-7721",
+      "address": "Reparto San Juan, Masaya",
+      "status": "cancelled"
+    },
+    {
+      "id": "ORD-005",
+      "customerName": "Luis González",
+      "product": "Silla Ergonómica",
+      "quantity": 1,
+      "phone": "8221-9087",
+      "address": "Barrio El Calvario, León",
+      "status": "pending"
+    },
+    {
+      "id": "ORD-006",
+      "customerName": "Daniela Torres",
+      "product": "Disco SSD 1TB Kingston",
+      "quantity": 3,
+      "phone": "8700-1144",
+      "address": "Colonia Jardines de Veracruz, Managua",
+      "status": "delivered"
+    },
+    {
+      "id": "ORD-007",
+      "customerName": "Ricardo Flores",
+      "product": "Mouse Logitech M185",
+      "quantity": 4,
+      "phone": "8612-5566",
+      "address": "Barrio Guadalupe, Estelí",
+      "status": "pending"
+    }
+  ]
 }

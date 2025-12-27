@@ -1,26 +1,49 @@
-.Cards{
-    height: 275px;
-    width: 250px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3),
-    5px 5px 0 rgba(0, 0, 0, .3);
-    border-radius: 20px;
+.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90vw;
 }
-.Cards img{
-    height: 175px;
-    width: 250px;
+
+.ShowCards {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+  height: 90vh;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.Cards {
+  height: 250px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3),
+    5px 5px 0 rgba(0, 0, 0, .3);
+  border-radius: 20px;
+}
+
+.Cards img {
+  height: 150px;
+  width: 200px;
 
 }
-.Info{
-    background-color: rgb(236, 230, 230);
-    height: 87px;
-    border-radius: 20px;
-    padding: 0 5px;
+
+.Info {
+  background-color: rgb(236, 230, 230);
+  min-height: 100px;
+  max-height: 100px;
+  height: auto;
+  border-radius: 20px;
+  padding: 0 5px;
 }
-.inventario{
-    padding: 1rem;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 1.5rem;
+
+.inventario {
+  padding: 1rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }

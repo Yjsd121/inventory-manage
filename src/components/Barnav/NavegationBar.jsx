@@ -1,6 +1,6 @@
 import './NavegationBar.css'
 
-export function BarNav () {
+export function BarNav ({ setview }) {
   return (
     <section className='main'>
       <nav className='nav'>
@@ -8,12 +8,12 @@ export function BarNav () {
           <img className='icon' src='/react.svg' />
           <p>Inv Manage</p>
         </div>
-        <a>Dashboard</a>
-        <a>Products</a>
-        <a>Categories</a>
-        <a>Orders</a>
-        <a>Users</a>
-        <a>Profile</a>
+        <a onClick={() => setview(0)}>Dashboard</a>
+        <a onClick={() => setview(1)}>Products</a>
+        <a onClick={() => setview(2)}>Categories</a>
+        <a onClick={() => setview(3)}>Orders</a>
+        <a onClick={() => setview(4)}>Users</a>
+        <a onClick={() => setview(5)}>Profile</a>
         <a>Logout</a>
       </nav>
     </section>

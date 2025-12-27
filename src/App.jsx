@@ -1,48 +1,40 @@
 import './App.css'
-// import { useState } from 'react'
+import { useState } from 'react'
 import { BarNav } from './components/Barnav/NavegationBar'
 // import { Inventory } from './components/Show/inventory'
 
 // Esto si funciona
-// import elementos from './mocks/Elementos.json'
-// import { ShowCards } from './components/Cards/Cards'
+import elementos from './mocks/Elementos.json'
+import { ShowCards } from './components/Cards/Cards'
 import ordersss from './mocks/Orders.json'
+import { ShowOrders } from './components/orders/Orders'
+
+function Vistas ({ valor, elementss, orderss }) {
+  if (valor === 0) {
+    return <h2>Dashboards</h2>
+  } else if (valor === 1) {
+    return <ShowCards elementss={elementss} />
+  } else if (valor === 2) {
+    return <h2>Categories</h2>
+  } else if (valor === 3) {
+    return <ShowOrders orderss={orderss} />
+  } else if (valor === 4) {
+    return <h2>Users</h2>
+  } else if (valor === 5) {
+    return <h2>Profile</h2>
+  }
+}
+
 export function App () {
-  // Esto tambien funciona
-  // const elementss = elementos.inventory
+  const elementss = elementos.inventory
+  const [view, setview] = useState(0)
   // const [inventory, setinventory] = useState(null)
 
   const orderss = ordersss.orders
-  const hasorders = orderss?.length > 0
   return (
     <main>
-      <BarNav />
-      {/* <ShowCards elementss={elementss} /> */}
-      <section className='orders'>
-        <div className='ShowOrders'>
-          <h2>Pending Orders</h2>
-          {
-            hasorders
-              ? (
-                  orderss.map(order => (
-                    <div key={order.id} className='order-card'>
-                      <h4>{order.id}</h4>
-                      <p>Producto: {order.product}</p>
-                      <p>Cantidad: {order.quantity}</p>
-                      {/* <p>Tel: {order.phone}</p>
-                      <p>Dirección: {order.address}</p> */}
-                      <p>Estado: {order.status}</p>
-                      <button> View </button>
-                    </div>
-                  ))
-                )
-              : (
-                <h2>No hay órdenes</h2>
-                )
-          }
-          <button>Create Order</button>
-        </div>
-      </section>
+      <BarNav setview={setview} />
+      <Vistas valor={view} elementss={elementss} orderss={orderss} />
     </main>
   )
 }

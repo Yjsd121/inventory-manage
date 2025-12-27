@@ -1,4 +1,5 @@
 import './Cards.css'
+import { SearchBar } from '../SearchBar/searchbar'
 
 function Cards ({ Item }) {
   return (
@@ -26,17 +27,14 @@ export function ShowCards ({ elementss }) {
   const hasinventory = elementss?.length > 0
   return (
     <div className='show'>
-      <div className='searching'>
-        <input type='text' />
-        <button>
-          Search
-        </button>
-      </div>
-      {
+      <SearchBar />
+      <div className='ShowCards'>
+        {
         hasinventory
           ? <Cards Item={elementss} />
           : <h1> No hay inventario</h1>
       }
+      </div>
     </div>
   )
 }
