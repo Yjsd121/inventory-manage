@@ -31,9 +31,11 @@ export function ShowOrders ({ orderss }) {
   return (
     <section className='orders'>
       <SearchBar filters={filters.orderFilters} />
-      <div className='ShowOrders'>
+      <div className='color'>
         <h2>Pending Orders</h2>
-        <Orders orderss={orderss} />
+        <div className='ShowOrders'>
+          <Orders orderss={orderss} />
+        </div>
         <button>Create Order</button>
       </div>
     </section>
