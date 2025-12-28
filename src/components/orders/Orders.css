@@ -1,20 +1,21 @@
 .orders {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+
+  flex-direction: column;
   width: 90vw;
 
 }
 
 .ShowOrders {
   background-color: white;
-  width: 675px;
-  height: auto;
+  width: 85vw;
+  height: 80vh;
   padding: 25px 10px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  overflow-y: auto;
 }
 
 .ShowOrders h2 {

@@ -1,1 +1,29 @@
-  
+  .Search-container {
+    background-color: white;
+    width: 90vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom:  10px;
+  }
+
+  .Filters-container {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .filter{
+    margin: 0 10px;
+  }
+  input{
+    height: 25px;
+    border-radius: 10px;
+    padding: 0 10px;
+    outline: none;
+    border: none;
+    box-shadow: inset 1px 3px 9px rgba(0, 0, 0, .5);
+    margin-right: 5px;
+  }

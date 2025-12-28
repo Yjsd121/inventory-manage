@@ -15,8 +15,7 @@ main {
   outline: none;
 }
 
-.searching button,
-.orders button {
+button {
   width: 150px;
   height: 25px;
   border-radius: 10px;
@@ -27,9 +26,8 @@ main {
 
 }
 
-.searching button:active,
-.ShowOrders button:active {
+button:active,
+button:active {
   box-shadow: 0 0 0 rgba(0, 0, 0, .3);
   transform: translateY(2px);
 }
-

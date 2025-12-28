@@ -1,6 +1,6 @@
 import './Cards.css'
 import { SearchBar } from '../SearchBar/searchbar'
-
+import filters from '../../mocks/ProductsFilters.json'
 function Cards ({ Item }) {
   return (
     <ul className='inventario'>
@@ -25,9 +25,10 @@ function Cards ({ Item }) {
 
 export function ShowCards ({ elementss }) {
   const hasinventory = elementss?.length > 0
+
   return (
     <div className='show'>
-      <SearchBar />
+      <SearchBar filters={filters.productFilters} />
       <div className='ShowCards'>
         {
         hasinventory

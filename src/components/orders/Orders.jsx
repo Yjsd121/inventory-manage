@@ -1,5 +1,6 @@
 import './Orders.css'
-
+import { SearchBar } from '../SearchBar/searchbar'
+import filters from '../../mocks/Ordersfilters.json'
 function Orderlist ({ orderss }) {
   return (
     orderss.map(order => (
@@ -29,6 +30,7 @@ function Orders ({ orderss }) {
 export function ShowOrders ({ orderss }) {
   return (
     <section className='orders'>
+      <SearchBar filters={filters.orderFilters} />
       <div className='ShowOrders'>
         <h2>Pending Orders</h2>
         <Orders orderss={orderss} />
