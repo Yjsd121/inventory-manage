@@ -24,11 +24,10 @@ function Listfilter ({ filter }) {
 export function SearchBar ({ filters }) {
   return (
     <section className='Search-container'>
-      <div>
-        <input />
-        <button>Search</button>
-      </div>
       <Listfilter filter={filters} />
+      <input />
+      <button>Search</button>
+
     </section>
   )
 }

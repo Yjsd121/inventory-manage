@@ -4,10 +4,13 @@ import { BarNav } from './components/Barnav/NavegationBar'
 // import { Inventory } from './components/Show/inventory'
 
 // Esto si funciona
+import { SearchBar } from './components/SearchBar/searchbar'
 import elementos from './mocks/Elementos.json'
 import { ShowCards } from './components/Cards/Cards'
 import ordersss from './mocks/Orders.json'
 import { ShowOrders } from './components/orders/Orders'
+import { Profileview } from './components/Profile/profile'
+import filterss from './mocks/Ordersfilters.json'
 
 function Vistas ({ valor, elementss, orderss }) {
   if (valor === 0) {
@@ -17,11 +20,18 @@ function Vistas ({ valor, elementss, orderss }) {
   } else if (valor === 2) {
     return <h2>Categories</h2>
   } else if (valor === 3) {
-    return <ShowOrders orderss={orderss} />
+    return (
+      <div>
+        <SearchBar filters={filterss.orderFilters} />
+        <ShowOrders orderss={orderss} />
+      </div>
+    )
   } else if (valor === 4) {
     return <h2>Users</h2>
   } else if (valor === 5) {
-    return <h2>Profile</h2>
+    return (
+      <Profileview />
+    )
   }
 }
 

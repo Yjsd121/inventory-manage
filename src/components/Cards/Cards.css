@@ -12,13 +12,13 @@
   width: 70vw;
   height: 80vh;
   overflow-y: auto;
-  background-color: white;
+  background-color: var(--Backg-color);
 }
 
 .Cards {
   height: 250px;
   width: 200px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--Backg-color);
   box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3),
     5px 5px 0 rgba(0, 0, 0, .3);
   border-radius: 20px;
@@ -31,12 +31,15 @@
 }
 
 .Info {
-  background-color: rgb(236, 230, 230);
+  text-align: left;
+  font-size: .87rem;
+  background-color: var(--bgn-body);
   min-height: 100px;
   max-height: 100px;
   height: auto;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0 5px;
+  border: solid .1px rgb(173, 154, 154) ;
 }
 
 .inventario {

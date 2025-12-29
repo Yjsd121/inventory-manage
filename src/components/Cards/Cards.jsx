@@ -10,6 +10,7 @@ function Cards ({ Item }) {
             <div className='Cards'>
               <img src='/react.svg' />
               <div className='Info'>
+                <p>Id: {item.id}</p>
                 <p>Name: {item.name}</p>
                 <p>status: {item.status}</p>
                 <p>Cant:{item.quantity}</p>
@@ -25,16 +26,15 @@ function Cards ({ Item }) {
 
 export function ShowCards ({ elementss }) {
   const hasinventory = elementss?.length > 0
-
   return (
     <div className='show'>
       <SearchBar filters={filters.productFilters} />
       <div className='ShowCards'>
         {
-        hasinventory
-          ? <Cards Item={elementss} />
-          : <h1> No hay inventario</h1>
-      }
+          hasinventory
+            ? <Cards Item={elementss} />
+            : <h1> No hay inventario</h1>
+        }
       </div>
     </div>
   )
