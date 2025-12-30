@@ -18,17 +18,15 @@ function Vistas ({ valor, elementss, orderss }) {
   } else if (valor === 1) {
     return <ShowCards elementss={elementss} />
   } else if (valor === 2) {
-    return <h2>Categories</h2>
-  } else if (valor === 3) {
     return (
       <div>
         <SearchBar filters={filterss.orderFilters} />
         <ShowOrders orderss={orderss} />
       </div>
     )
-  } else if (valor === 4) {
+  } else if (valor === 3) {
     return <h2>Users</h2>
-  } else if (valor === 5) {
+  } else if (valor === 4) {
     return (
       <Profileview />
     )

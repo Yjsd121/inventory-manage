@@ -7,6 +7,7 @@
 }
 
 .panel {
+  background-color: var(--Backg-color);
   margin: 0 10px;
   height: 85vh;
   display: flex;
@@ -14,8 +15,16 @@
   flex-direction: column;
   padding: 20px 0;
   border-radius: 25px;
+  box-shadow: 1px 1px 4px var(--input-shadow);
 }
-
+.padding{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 99%;
+  overflow-y: auto;
+  scrollbar-width:thin;
+}
 .profile-img {
   height: 150px;
   width: 150px;
@@ -36,9 +45,8 @@
 }
 
 .centro {
-  background-color: var(--Backg-color);
-  box-shadow: 1px 1px 4px var(--input-shadow);
-  width: 50vw;
+  
+  width: 60vw;
 }
 
 .container {
@@ -46,10 +54,17 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
   background-color: var(--bgn-body);
   width: 90%;
-  height: 275px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
-
-.container h2 {
+.calendar{
+  justify-content: center;
+  align-items: center;
+}
+.container h2,
+.CalendarSize h2 {
   margin: 5px 0;
   text-align: center;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
@@ -57,10 +72,22 @@
 .container button{
   margin-top: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .Task-container {
   padding: 10px 15px;
   height: 170px;
   overflow-y: auto;
+}
+
+.CalendarSize{
+  margin: 10px;
+  height:100%;
+  width: 90%;
+}
+
+.CalendarSize button{
+  width: 80px;
+  height: 35px;
 }
