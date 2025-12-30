@@ -1,6 +1,8 @@
 import './profile.css'
-// import { ShowCards } from '../Cards/Cards'
+import task from '../../mocks/Task.json'
+
 export function Profileview () {
+  const tasks = task.tasks
   return (
     <section className='profile-container'>
       <div className='panel lateral'>
@@ -13,9 +15,24 @@ export function Profileview () {
         </nav>
       </div>
       <div className='panel centro'>
-        <h2>Task</h2>
-        <div className='Task-container'>
-          <h2>Estoy creando la visualizacion de las tags</h2>
+        <div className='container'>
+          <h2>Task</h2>
+          <div className='Task-container'>
+            <div className='showOrders'>
+              {
+                tasks.map(index => (
+                  <div key={index.id} className='order-card'>
+                    <p>{index.id}</p>
+                    <p>{index.title}</p>
+                    <p>{index.status}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <button>
+            Create
+          </button>
         </div>
       </div>
       <div className='panel lateral'>
