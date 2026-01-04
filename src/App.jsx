@@ -11,6 +11,7 @@ import ordersss from './mocks/Orders.json'
 import { ShowOrders } from './components/orders/Orders'
 import { Profileview } from './components/Profile/profile'
 import filterss from './mocks/Ordersfilters.json'
+import userfil from './mocks/usersfilters.json'
 
 function Vistas ({ valor, elementss, orderss }) {
   if (valor === 0) {
@@ -25,7 +26,9 @@ function Vistas ({ valor, elementss, orderss }) {
       </div>
     )
   } else if (valor === 3) {
-    return <h2>Users</h2>
+    return (
+      <SearchBar filters={userfil.UserFilters} />
+    )
   } else if (valor === 4) {
     return (
       <Profileview />
