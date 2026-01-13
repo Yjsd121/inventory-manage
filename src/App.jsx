@@ -14,7 +14,7 @@ export function App () {
   const orderss = ordersss.orders
   return (
     <main>
-      <BarNav setview={setview} />
+      <BarNav view={view} setview={setview} />
       <Vistas valor={view} elementss={elementss} orderss={orderss} />
     </main>
   )

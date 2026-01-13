@@ -1,38 +1,63 @@
 .main {
-  background-color:var(--bgn-body);
+  background-color: var(--bgn-body);
   height: 100vh;
   width: 10vw;
+  gap: 2rem;
 }
-.icon{
+
+.icon {
   height: 30px;
   width: 30px;
 }
-.logo, .nav a{
+
+.logo,
+.nav a {
   color: var(--barnav-textcolor);
 }
-.logo{
-  padding: 10px;
+
+.logo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.nav {
-  height: 50px;
-  display: flex;
-  align-items:stretch;
-  flex-direction: column;
-  gap: 2rem;
+  height: 10vh;
 }
 
-.nav a {
+.nav {
+  height: 70vh;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 5px;
+}
+
+.bar {
+  gap: .7rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.bar a {
   font-size: 1rem;
-  margin-left: 2px;
+
   transition: all .1s;
+}
+
+.active {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: rgb(228, 227, 227);
 }
 
 .right a:hover,
 .nav a:hover {
   cursor: pointer;
   font-size: 1.25rem;
+}
+
+.logout {
+  margin-top: auto;
 }
