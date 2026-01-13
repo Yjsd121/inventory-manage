@@ -1,9 +1,10 @@
 :root {
   --Backg-color: white;
-  --btn-color:rgb(230, 222, 222);
+  --btn-color:#e6dede;
   --input-shadow: rgba(0, 0, 0, .5);
   --order-cardbgn:rgb(240, 237, 237);
   --bgn-body:#f3f2f2;
+  --barnav-textcolor: #000
 }
 
 button {

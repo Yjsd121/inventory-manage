@@ -1,20 +1,13 @@
 {
   "productFilters": {
     "categories": [
-      "Electrónica",
-      "Accesorios",
-      "Mobiliario",
-      "Almacenamiento"
+      "books",
+      "Electronics"
     ],
     "status": [
       "available",
       "low_stock",
       "out_of_stock"
-    ],
-    "sortBy": [
-      "name",
-      "price",
-      "quantity"
     ]
   }
 }

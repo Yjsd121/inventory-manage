@@ -6,8 +6,6 @@ export function Orderlist ({ orderss }) {
         <h4>{order.id}</h4>
         <p>Producto: {order.product}</p>
         <p>Cantidad: {order.quantity}</p>
-        {/* <p>Tel: {order.phone}</p>
-        <p>Dirección: {order.address}</p> */}
         <p>Estado: {order.status}</p>
         <button> View </button>
       </div>

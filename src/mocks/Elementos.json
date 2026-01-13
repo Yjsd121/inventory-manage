@@ -4,15 +4,15 @@
             "id": "INV-001",
             "name": "Laptop Dell Inspiron 15",
             "quantity": 12,
-            "unitPrice": 850.00,
+            "unitPrice": 600.00,
             "status": "available"
         },
         {
             "id": "INV-002",
             "name": "Laptop Dell Inspiron 15",
             "quantity": 12,
-            "unitPrice": 850.00,
-            "status": "available"
+            "unitPrice": 900.00,
+            "status": "low_stock"
         }
     ]
 }

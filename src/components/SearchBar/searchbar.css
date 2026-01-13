@@ -1,14 +1,14 @@
   .Search-container {
-    background-color: var(--Backg-color);
+    background-color: var(--bgn-body);
     width: 90vw;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-bottom:  10px;
+    margin-bottom: 10px;
     padding: 10px 0;
-    box-shadow: 1px 1px 4px var(--input-shadow);
+    gap: 1rem;
   }
 
   .Filters-container {
@@ -18,11 +18,11 @@
     flex-direction: row;
   }
 
-  .filter{
+  .filter {
     margin: 0 10px;
   }
 
-  .Search-container select{
+  .Search-container select {
     background-color: var(--btn-color);
     width: 150px;
     height: 25px;
@@ -30,13 +30,20 @@
     padding: 0 10px;
   }
 
-  input{
-    width: 200px;
-    height: 25px;
+  input {
     border-radius: 10px;
     padding: 0 10px;
     outline: none;
     border: none;
+  }
+
+  input[type="checkbox"]  {
+    height: 20px;
+    width: 20px;
+  }
+
+  .input {
     box-shadow: inset 1px 3px 9px var(--input-shadow);
-    margin-right: 5px;
+    width: 200px;
+    height: 25px;
   }

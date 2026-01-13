@@ -1,5 +1,5 @@
 .main {
-  background-color: #010b1a;
+  background-color:var(--bgn-body);
   height: 100vh;
   width: 10vw;
 }
@@ -7,9 +7,11 @@
   height: 30px;
   width: 30px;
 }
+.logo, .nav a{
+  color: var(--barnav-textcolor);
+}
 .logo{
   padding: 10px;
-  color: #c3d1e8;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,14 +20,14 @@
 .nav {
   height: 50px;
   display: flex;
-  align-items: center;
+  align-items:stretch;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .nav a {
-  padding: 10px 0;
   font-size: 1rem;
-  color: #c3d1e8;
+  margin-left: 2px;
   transition: all .1s;
 }
 

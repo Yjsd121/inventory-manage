@@ -1,24 +1,27 @@
 import './Cards.css'
 import { SearchBar } from '../SearchBar/searchbar'
 import filters from '../../mocks/ProductsFilters.json'
+
 function Cards ({ Item }) {
   return (
     <ul className='inventario'>
       {
-        Item.map(item => (
-          <li key={item.id}>
-            <div className='Cards'>
-              <img src='/react.svg' />
-              <div className='Info'>
-                <p>Id: {item.id}</p>
-                <p>Name: {item.name}</p>
-                <p>status: {item.status}</p>
-                <p>Cant:{item.quantity}</p>
-                <p>${item.unitPrice}</p>
+        Item
+          .filter(item => { return (item.unitPrice >= 0 && (item.status === 'available')) })
+          .map(item => (
+            <li key={item.id}>
+              <div className='Cards'>
+                <img src='/react.svg' />
+                <div className='Info'>
+                  <p>Id: {item.id}</p>
+                  <p>Name: {item.name}</p>
+                  <p>status: {item.status}</p>
+                  <p>Cant:{item.quantity}</p>
+                  <p>${item.unitPrice}</p>
+                </div>
               </div>
-            </div>
-          </li>
-        ))
+            </li>
+          ))
       }
     </ul>
   )
