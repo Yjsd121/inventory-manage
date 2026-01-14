@@ -30,7 +30,6 @@ function Listfilter ({ filter, values, onChange }) {
 
 export function SearchBar ({ filters, setFilters }) {
   const [selectedFilters, setSelectedFilters] = useState({})
-
   const handleFilterChange = (filterName, value) => {
     setSelectedFilters(prev => ({
       ...prev,
@@ -40,6 +39,7 @@ export function SearchBar ({ filters, setFilters }) {
 
   const handleSetfilter = () => {
     setFilters(selectedFilters)
+    setSelectedFilters({})
   }
 
   return (

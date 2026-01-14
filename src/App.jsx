@@ -20,7 +20,7 @@ export function App () {
   return (
     <main>
       <BarNav view={view} setview={setview} />
-      <Vistas valor={view} elementss={elementss} orderss={orderss} setFilters={setFilters} />
+      <Vistas valor={view} elementss={elementss} orderss={orderss} setFilters={setFilters} selectedfilters={selectedfilters} />
     </main>
   )
 }

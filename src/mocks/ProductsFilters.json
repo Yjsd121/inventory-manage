@@ -1,10 +1,12 @@
 {
   "productFilters": {
     "categories": [
+      "all",
       "books",
       "Electronics"
     ],
     "status": [
+      "all",
       "available",
       "low_stock",
       "out_of_stock"

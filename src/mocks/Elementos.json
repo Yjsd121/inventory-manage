@@ -5,14 +5,72 @@
             "name": "Laptop Dell Inspiron 15",
             "quantity": 12,
             "unitPrice": 600.00,
-            "status": "available"
+            "status": "available",
+            "category": "books"
         },
         {
             "id": "INV-002",
             "name": "Laptop Dell Inspiron 15",
             "quantity": 12,
             "unitPrice": 900.00,
-            "status": "low_stock"
+            "status": "low_stock",
+            "category": "Electronics"
+        },
+        {
+            "id": "INV-003",
+            "name": "Mechanical Keyboard RGB",
+            "quantity": 45,
+            "unitPrice": 120.00,
+            "status": "available",
+            "category": "Electronics"
+        },
+        {
+            "id": "INV-004",
+            "name": "Wireless Mouse Logitech",
+            "quantity": 8,
+            "unitPrice": 45.50,
+            "status": "low_stock",
+            "category": "Electronics"
+        },
+        {
+            "id": "INV-005",
+            "name": "27\" Monitor Samsung",
+            "quantity": 0,
+            "unitPrice": 280.00,
+            "status": "out_of_stock",
+            "category": "electronics"
+        },
+        {
+            "id": "INV-006",
+            "name": "External SSD 1TB",
+            "quantity": 30,
+            "unitPrice": 150.00,
+            "status": "available",
+            "category": "books"
+        },
+        {
+            "id": "INV-007",
+            "name": "Office Chair Ergonomic",
+            "quantity": 5,
+            "unitPrice": 210.00,
+            "status": "low_stock",
+            "category": "Electronics"
+        },
+        {
+            "id": "INV-008",
+            "name": "Wi-Fi Router Dual Band",
+            "quantity": 18,
+            "unitPrice": 95.00,
+            "status": "available",
+            "category": "Electronics"
+        },
+        {
+            "id": "INV-009",
+            "name": "Gaming Headset 7.1",
+            "quantity": 0,
+            "unitPrice": 85.00,
+            "status": "out_of_stock",
+            "category": "books"
         }
     ]
 }

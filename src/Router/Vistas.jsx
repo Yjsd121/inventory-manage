@@ -7,14 +7,14 @@ import cards from '../mocks/ProductsFilters.json'
 import filterss from '../mocks/Ordersfilters.json'
 import userfil from '../mocks/usersfilters.json'
 
-export function Vistas ({ valor, elementss, orderss, setFilters }) {
+export function Vistas ({ valor, elementss, orderss, setFilters, selectedfilters }) {
   if (valor === 0) {
     return <h2>Dashboards</h2>
   } else if (valor === 1) {
     return (
       <div>
         <SearchBar filters={cards.productFilters} setFilters={setFilters} />
-        <ShowCards elementss={elementss} />
+        <ShowCards elementss={elementss} selectedfilters={selectedfilters} />
       </div>
     )
   } else if (valor === 2) {

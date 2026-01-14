@@ -1,10 +1,13 @@
 import './Cards.css'
-function Cards ({ Item }) {
+function Cards ({ Item, selectedfilters }) {
   return (
     <ul className='inventario'>
       {
         Item
-          .filter(item => { return (item.unitPrice >= 0 && (item.status === 'available')) })
+          .filter(item => {
+            return ((item.category === selectedfilters.categories || selectedfilters.categories === 'all') &&
+              (item.status === selectedfilters.status || selectedfilters.status === 'all'))
+          })
           .map(item => (
             <li key={item.id}>
               <div className='Cards'>
@@ -24,14 +27,14 @@ function Cards ({ Item }) {
   )
 }
 
-export function ShowCards ({ elementss }) {
+export function ShowCards ({ elementss, selectedfilters }) {
   const hasinventory = elementss?.length > 0
   return (
     <div className='show'>
       <div className='ShowCards'>
         {
           hasinventory
-            ? <Cards Item={elementss} />
+            ? <Cards Item={elementss} selectedfilters={selectedfilters} />
             : <h1> No hay inventario</h1>
         }
       </div>
