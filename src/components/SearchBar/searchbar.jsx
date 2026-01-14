@@ -8,13 +8,11 @@ function Listfilter ({ filter, values, onChange }) {
         Object.entries(filter).map(([filtername, options]) => (
           <div key={filtername} className='filter'>
             <label>{filtername}: </label>
-
             <select
               value={values[filtername] || ''}
               onChange={(e) => onChange(filtername, e.target.value)}
             >
               <option value=''>-- Selecciona --</option>
-
               {
                 options.map(option => (
                   <option key={option} value={option}>
@@ -30,7 +28,7 @@ function Listfilter ({ filter, values, onChange }) {
   )
 }
 
-export function SearchBar ({ filters }) {
+export function SearchBar ({ filters, setFilters }) {
   const [selectedFilters, setSelectedFilters] = useState({})
 
   const handleFilterChange = (filterName, value) => {
@@ -40,8 +38,8 @@ export function SearchBar ({ filters }) {
     }))
   }
 
-  const handleSearch = () => {
-    console.log('Filtros seleccionados:', selectedFilters)
+  const handleSetfilter = () => {
+    setFilters(selectedFilters)
   }
 
   return (
@@ -55,7 +53,7 @@ export function SearchBar ({ filters }) {
       <input type='checkbox' />
       <input type='text' className='input' />
 
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSetfilter}>Search</button>
     </section>
   )
 }
