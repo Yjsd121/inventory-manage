@@ -41,6 +41,8 @@ export function SearchBar({ filters, setFilters, setselectedData }) {
   useEffect(()=>{
     try {
       fetch('http://localhost:3000/Search')
+      .then(res=res.json())
+      .then(data=>setselectedData(data))
     } catch (error) {
       console.log('AQUI HAY UN GRAN ERROR',error)
     }
