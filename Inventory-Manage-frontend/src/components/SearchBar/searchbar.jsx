@@ -31,6 +31,7 @@ function Listfilter({ filter, values, onChange }) {
 export function SearchBar({ filters, setFilters, setselectedData }) {
   const [selectedFilters, setSelectedFilters] = useState({})
   const [Flag,setFlag] = useState(true)
+
   const handleFilterChange = (filterName, value) => {
     setSelectedFilters(prev => ({
       ...prev,
@@ -40,8 +41,8 @@ export function SearchBar({ filters, setFilters, setselectedData }) {
 
   useEffect(()=>{
     try {
-      fetch('http://localhost:3000/Search')
-      .then(res=res.json())
+      fetch('http://localhost:3000/Orders')
+      .then(res=>res.json())
       .then(data=>setselectedData(data))
     } catch (error) {
       console.log('AQUI HAY UN GRAN ERROR',error)
@@ -69,3 +70,5 @@ export function SearchBar({ filters, setFilters, setselectedData }) {
     </section>
   )
 }
+
+

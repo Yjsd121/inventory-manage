@@ -1,24 +1,22 @@
-const http = require('node:http')
-const fs = require('node:fs')
+const express = require('express')
+const fs = require('fs').promises
+const cors = require('cors')
+const path = require('path')
+const app = express()
+const port = 3000
 
-const server = http.createServer((req, res) => {
-  const method = req.method
-  console.log(method)
-  if (req.url === '/Search') {
-    fs.readFile('img.png', (err, data) => {
-      if (err) {
-        res.statusCode = 500
-        console.log(err)
-      } else {
-        res.statusCode = 200
-        res.setHeader('content-Type', 'Image/png')
-        res.end(data)
-        console.log('Data enviada')
-      }
-    })
+app.use(cors())
+app.get('/Orders', async (req, res) => {
+  try {
+    const filepath = path.join(__dirname, 'Data', 'Elementos.json')
+    const data = await fs.readFile(filepath, 'utf-8')
+    res.json(JSON.parse(data))
+    console.log('Dataenviada')
+  } catch (e) {
+    console.log(`Este es el error ${e}`)
   }
 })
 
-server.listen(3000, () => {
-  console.log('Server is launching in http://localhost:3000')
+app.listen(port, () => {
+  console.log(`Server listen in http://localhost:${port}`)
 })

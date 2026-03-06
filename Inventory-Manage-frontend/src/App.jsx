@@ -17,6 +17,10 @@ export function App () {
     console.log(selectedfilters)
   }, [selectedfilters])
 
+  useEffect(()=>{
+    console.log(SelectedData)
+  },[SelectedData])
+
   const orderss = ordersss.orders
   return (
     <main>

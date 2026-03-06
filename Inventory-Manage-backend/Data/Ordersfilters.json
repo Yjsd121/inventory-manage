@@ -1,0 +1,14 @@
+{
+  "orderFilters": {
+    "status": [
+      "pending",
+      "delivered",
+      "cancelled"
+    ],
+    "Price": [
+      "<10",
+      "11-50",
+      "50>"
+    ]
+  }
+}
