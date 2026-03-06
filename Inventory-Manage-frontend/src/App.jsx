@@ -21,11 +21,11 @@ export function App () {
     console.log(SelectedData)
   },[SelectedData])
 
-  const orderss = ordersss.orders
+  
   return (
     <main>
       <BarNav view={view} setview={setview} />
-      <Vistas valor={view} elementss={elementss} orderss={orderss} setFilters={setFilters} selectedfilters={selectedfilters} setselectedData={setselectedData} />
+      <Vistas valor={view} elementss={elementss} SelectedData={SelectedData} setFilters={setFilters} selectedfilters={selectedfilters} setselectedData={setselectedData} />
     </main>
   )
 }

@@ -12,7 +12,7 @@ function Listfilter({ filter, values, onChange }) {
               value={values[filtername] || ''}
               onChange={(e) => onChange(filtername, e.target.value)}
             >
-              <option value=''>-- Selecciona --</option>
+              <option value=''>-- SELECT --</option>
               {
                 options.map(option => (
                   <option key={option} value={option}>
@@ -30,7 +30,17 @@ function Listfilter({ filter, values, onChange }) {
 
 export function SearchBar({ filters, setFilters, setselectedData }) {
   const [selectedFilters, setSelectedFilters] = useState({})
-  const [Flag,setFlag] = useState(true)
+  const [Flag, setFlag] = useState(true)
+
+  useEffect(() => {
+
+    const initialFilters = {}
+    Object.entries(filters).forEach(([name, options]) => {
+      initialFilters[name] = options[0]
+    })
+    console.log(initialFilters)
+    setFilters(initialFilters)
+  }, [filters])
 
   const handleFilterChange = (filterName, value) => {
     setSelectedFilters(prev => ({
@@ -38,16 +48,20 @@ export function SearchBar({ filters, setFilters, setselectedData }) {
       [filterName]: value
     }))
   }
+  useEffect(() => {
+    fetch('http://localhost:3000/Orders')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Server error")
+        }
+        return res.json()
+      })
+      .then(data => setselectedData(data))
+      .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
+  }, [Flag])
 
-  useEffect(()=>{
-    try {
-      fetch('http://localhost:3000/Orders')
-      .then(res=>res.json())
-      .then(data=>setselectedData(data))
-    } catch (error) {
-      console.log('AQUI HAY UN GRAN ERROR',error)
-    }
-  },[Flag])
+
+
 
   const handleSetfilter = () => {
     setFilters(selectedFilters)
