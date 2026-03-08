@@ -1,31 +1,19 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BarNav } from './components/Barnav/NavegationBar'
 import { Vistas } from './Router/Vistas'
-// Esto si funciona
 
-import elementos from './mocks/Elementos.json'
-import ordersss from './mocks/Orders.json'
 
-export function App () {
-  const elementss = elementos.inventory
-  const [view, setview] = useState(0)
+export function App() {
+  const [view, setview] = useState("Dashboard")
   const [selectedfilters, setFilters] = useState({})
-  const [SelectedData,setselectedData] = useState({})
+  const [SelectedData, setselectedData] = useState({})
 
-  useEffect(() => {
-    console.log(selectedfilters)
-  }, [selectedfilters])
 
-  useEffect(()=>{
-    console.log(SelectedData)
-  },[SelectedData])
-
-  
   return (
     <main>
       <BarNav view={view} setview={setview} />
-      <Vistas valor={view} elementss={elementss} SelectedData={SelectedData} setFilters={setFilters} selectedfilters={selectedfilters} setselectedData={setselectedData} />
+      <Vistas valor={view} SelectedData={SelectedData} setFilters={setFilters} selectedfilters={selectedfilters} setselectedData={setselectedData} />
     </main>
   )
 }

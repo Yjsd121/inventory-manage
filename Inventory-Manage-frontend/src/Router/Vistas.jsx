@@ -7,28 +7,28 @@ import cards from '../mocks/ProductsFilters.json'
 import filterss from '../mocks/Ordersfilters.json'
 import userfil from '../mocks/usersfilters.json'
 
-export function Vistas ({ valor, elementss, SelectedData, setFilters, selectedfilters, setselectedData }) {
-  if (valor === 0) {
+export function Vistas ({ valor, SelectedData, setFilters, selectedfilters, setselectedData }) {
+  if (valor === "Dashboard") {
     return <h2>Dashboards</h2>
-  } else if (valor === 1) {
+  } else if (valor === "Products") {
     return (
       <div>
-        <SearchBar filters={cards.productFilters} setFilters={setFilters} setselectedData={setselectedData} />
-        <ShowCards elementss={elementss} selectedfilters={selectedfilters} />
+        <SearchBar endpoint ={valor} filters={cards.productFilters} setFilters={setFilters} setselectedData={setselectedData} />
+        <ShowCards elementss={SelectedData} selectedfilters={selectedfilters} />
       </div>
     )
-  } else if (valor === 2) {
+  } else if (valor === "Orders") {
     return (
       <div>
-        <SearchBar filters={filterss.orderFilters} setFilters={setFilters} setselectedData={setselectedData} />
+        <SearchBar endpoint ={valor} filters={filterss.orderFilters} setFilters={setFilters} setselectedData={setselectedData} />
         <ShowOrders orderss={SelectedData} />
       </div>
     )
-  } else if (valor === 3) {
+  } else if (valor === "Users") {
     return (
-      <SearchBar filters={userfil.UserFilters} setFilters={setFilters} setselectedData={setselectedData} />
+      <SearchBar endpoint ={valor} filters={userfil.UserFilters} setFilters={setFilters} setselectedData={setselectedData} />
     )
-  } else if (valor === 4) {
+  } else if (valor === "Profile") {
     return (
       <Profileview />
     )

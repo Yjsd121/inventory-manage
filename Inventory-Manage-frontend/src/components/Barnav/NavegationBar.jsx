@@ -10,11 +10,11 @@ export function BarNav ({ view, setview }) {
       <nav className='nav'>
 
         <div className='bar'>
-          <a className={view === 0 ? 'active' : ''} onClick={() => setview(0)}>Dashboard</a>
-          <a className={view === 1 ? 'active' : ''} onClick={() => setview(1)}>Products</a>
-          <a className={view === 2 ? 'active' : ''} onClick={() => setview(2)}>Orders</a>
-          <a className={view === 3 ? 'active' : ''} onClick={() => setview(3)}>Users</a>
-          <a className={view === 4 ? 'active' : ''} onClick={() => setview(4)}>Profile</a>
+          <a className={view === "Dashboard" ? 'active' : ''} onClick={() => setview("Dashboard")}>Dashboard</a>
+          <a className={view === "Products" ? 'active' : ''} onClick={() => setview("Products")}>Products</a>
+          <a className={view === "Orders" ? 'active' : ''} onClick={() => setview("Orders")}>Orders</a>
+          <a className={view === "Users" ? 'active' : ''} onClick={() => setview("Users")}>Users</a>
+          <a className={view === "Profile" ? 'active' : ''} onClick={() => setview("Profile")}>Profile</a>
         </div>
         <div className='logout'>
           <a>Logout</a>

@@ -28,19 +28,19 @@ function Listfilter({ filter, values, onChange }) {
   )
 }
 
-export function SearchBar({ filters, setFilters, setselectedData }) {
+export function SearchBar({ endpoint, filters, setFilters, setselectedData }) {
   const [selectedFilters, setSelectedFilters] = useState({})
   const [Flag, setFlag] = useState(true)
-
+  
   useEffect(() => {
-
     const initialFilters = {}
     Object.entries(filters).forEach(([name, options]) => {
       initialFilters[name] = options[0]
     })
-    console.log(initialFilters)
+    
     setFilters(initialFilters)
-  }, [filters])
+    console.log(initialFilters,endpoint)
+  }, [endpoint])
 
   const handleFilterChange = (filterName, value) => {
     setSelectedFilters(prev => ({
@@ -48,20 +48,21 @@ export function SearchBar({ filters, setFilters, setselectedData }) {
       [filterName]: value
     }))
   }
+
   useEffect(() => {
-    fetch('http://localhost:3000/Orders')
+    fetch(`http://localhost:3000/${endpoint}`)
       .then(res => {
         if (!res.ok) {
           throw new Error("Server error")
         }
         return res.json()
       })
-      .then(data => setselectedData(data))
+      .then(data => {
+        const value = Object.values(data)[0]
+        setselectedData(value)
+      })
       .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
-  }, [Flag])
-
-
-
+  }, [Flag,endpoint])
 
   const handleSetfilter = () => {
     setFilters(selectedFilters)

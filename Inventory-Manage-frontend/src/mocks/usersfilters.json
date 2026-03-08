@@ -1,10 +1,12 @@
 {
   "UserFilters": {
     "AccesLevel": [
+      "all",
       "corriente",
       "Admin"
     ],
     "cargo": [
+      "all",
       "Colaborador",
       "supervisor",
       "JefeArea"
