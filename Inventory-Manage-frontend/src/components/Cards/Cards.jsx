@@ -9,15 +9,15 @@ function Cards ({ Item, selectedfilters }) {
               (item.status === selectedfilters.status || selectedfilters.status === 'all'))
           })
           .map(item => (
-            <li key={item.id}>
+            <li key={item.Id}>
               <div className='Cards'>
                 <img src='/react.svg' />
                 <div className='Info'>
-                  <p>Id: {item.id}</p>
-                  <p>Name: {item.name}</p>
-                  <p>status: {item.status}</p>
-                  <p>Cant:{item.quantity}</p>
-                  <p>${item.unitPrice}</p>
+                  <p>Id: {item.Id}</p>
+                  <p>Name: {item.Name}</p>
+                  <p>status: {item.Status}</p>
+                  <p>Cant:{item.Quantity}</p>
+                  <p>${item.Price}</p>
                 </div>
               </div>
             </li>

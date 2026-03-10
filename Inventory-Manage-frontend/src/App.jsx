@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BarNav } from './components/Barnav/NavegationBar'
 import { Vistas } from './Router/Vistas'
 
@@ -9,7 +9,9 @@ export function App() {
   const [selectedfilters, setFilters] = useState({})
   const [SelectedData, setselectedData] = useState({})
 
-
+  useEffect(()=>{
+    console.log(SelectedData)
+  },[SelectedData])
   return (
     <main>
       <BarNav view={view} setview={setview} />

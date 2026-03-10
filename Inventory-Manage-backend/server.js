@@ -1,8 +1,6 @@
 const express = require('express')
 const MySQL = require('mysql2')
-const fs = require('fs').promises
 const cors = require('cors')
-const path = require('path')
 
 const connection = MySQL.createConnection({
   host: '127.0.0.1',
@@ -10,6 +8,7 @@ const connection = MySQL.createConnection({
   password: 'yjsd348d',
   database: 'inventory_manage'
 })
+
 connection.connect(err => {
   if (err) {
     console.log(err)
@@ -23,33 +22,36 @@ const port = 3000
 
 app.use(cors())
 
-app.get('/test', (req, res) => {
-  connection.query('SELECT * FROM  products', (err, rows, fields) => {
-    if (err) throw err
-    console.log('the solution is: ', rows[0].solutions)
+function Querry (sql) {
+  return new Promise((resolve, reject) => {
+    connection.query(sql, (err, rows) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows)
+      }
+    })
   })
+}
 
-  connection.end()
-})
+// app.get('/test', (req, res) => {
+
+// })
+
 app.get('/Orders', async (req, res) => {
-  try {
-    const filepath = path.join(__dirname, 'Data', 'Orders.json')
-    const data = await fs.readFile(filepath, 'utf-8')
-    res.json(JSON.parse(data))
-    console.log('Dataenviada')
-  } catch (e) {
-    console.log(`Este es el error ${e}`)
-  }
+  const rows = Querry('SELECT * FROM orders')
+
+  res.json({
+    products: rows
+  })
 })
+
 app.get('/Products', async (req, res) => {
-  try {
-    const filepath = path.join(__dirname, 'Data', 'Elementos.json')
-    const data = await fs.readFile(filepath, 'utf-8')
-    res.json(JSON.parse(data))
-    console.log('Dataenviada')
-  } catch (e) {
-    console.log(`Este es el error ${e}`)
-  }
+  const rows = await Querry('SELECT * FROM products')
+  console.log(rows)
+  res.json({
+    Products: rows
+  })
 })
 
 app.listen(port, () => {
