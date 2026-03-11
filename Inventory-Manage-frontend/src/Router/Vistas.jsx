@@ -21,7 +21,7 @@ export function Vistas ({ valor, SelectedData, setFilters, selectedfilters, sets
     return (
       <div>
         <SearchBar endpoint ={valor} filters={filterss.orderFilters} setFilters={setFilters} setselectedData={setselectedData} />
-        <ShowOrders orderss={SelectedData} />
+        <ShowOrders orderss={SelectedData} selectedfilters={selectedfilters} />
       </div>
     )
   } else if (valor === "Users") {

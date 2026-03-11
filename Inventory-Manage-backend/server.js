@@ -19,7 +19,6 @@ connection.connect(err => {
 const app = express()
 
 const port = 3000
-
 app.use(cors())
 
 function Querry (sql) {
@@ -39,8 +38,8 @@ function Querry (sql) {
 // })
 
 app.get('/Orders', async (req, res) => {
-  const rows = Querry('SELECT * FROM orders')
-
+  const rows = await Querry('SELECT * FROM orders')
+  console.log(rows)
   res.json({
     products: rows
   })
