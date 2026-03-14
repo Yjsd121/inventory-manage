@@ -1,6 +1,6 @@
 import './profile.css'
-import task from '../../mocks/Task.json'
-import { DemoApp } from '../calendar/calendar'
+import task from '../mocks/Task.json'
+// import { DemoApp } from './calendar'
 
 export function Profileview () {
   const tasks = task.tasks
@@ -19,7 +19,7 @@ export function Profileview () {
       <section className='panel centro'>
         <div className='padding'>
           <div className=' calendar container '>
-            <DemoApp />
+            {/* <DemoApp /> */}
           </div>
           <div className='container'>
             <h2>Task</h2>

@@ -1,12 +1,11 @@
-import { ShowOrders } from '../components/orders/Orders'
-import { Profileview } from '../components/Profile/profile'
+import { ShowOrders } from '../orders/Orders'
+import { Profileview } from '../Profile/profile'
 import { SearchBar } from '../components/SearchBar/searchbar'
-import { ShowCards } from '../components/Cards/Cards'
+import { ShowCards } from '../Products/Cards'
 
 import cards from '../mocks/ProductsFilters.json'
 import filterss from '../mocks/Ordersfilters.json'
 import userfil from '../mocks/usersfilters.json'
-
 export function Vistas ({ valor, SelectedData, setFilters, selectedfilters, setselectedData }) {
   if (valor === "Dashboard") {
     return <h2>Dashboards</h2>

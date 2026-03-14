@@ -39,7 +39,7 @@ function Querry (sql) {
 
 app.get('/Orders', async (req, res) => {
   const rows = await Querry('SELECT * FROM orders')
-  console.log(rows)
+
   res.json({
     products: rows
   })
@@ -47,7 +47,7 @@ app.get('/Orders', async (req, res) => {
 
 app.get('/Products', async (req, res) => {
   const rows = await Querry('SELECT * FROM products')
-  console.log(rows)
+
   res.json({
     Products: rows
   })
