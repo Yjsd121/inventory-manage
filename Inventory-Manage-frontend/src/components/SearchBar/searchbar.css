@@ -1,7 +1,4 @@
   .Search-container {
-    background-color: var(--bgn-body);
-    width: 90vw;
-    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;

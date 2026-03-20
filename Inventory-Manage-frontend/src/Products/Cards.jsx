@@ -1,5 +1,7 @@
 import './Cards.css'
-function Cards ({ Item, selectedfilters }) {
+import { useAppContext } from '../context/TrialContext'
+
+function Cards({ Item, selectedfilters }) {
   return (
     <ul className='inventario'>
       {
@@ -27,17 +29,22 @@ function Cards ({ Item, selectedfilters }) {
   )
 }
 
-export function ShowCards ({ elementss, selectedfilters }) {
-  const hasinventory = elementss?.length > 0
+export function ShowCards() {
+  const { SelectedData, selectedfilters } = useAppContext()
+  const hasinventory = SelectedData?.length > 0
+  
   return (
     <div className='show'>
-      <div className='ShowCards'>
-        {
-          hasinventory
-            ? <Cards Item={elementss} selectedfilters={selectedfilters} />
-            : <h1> No hay inventario</h1>
-        }
+      <div className='color'>
+        <div className='ShowCards'>
+          {
+            hasinventory
+              ? <Cards Item={SelectedData} selectedfilters={selectedfilters} />
+              : <h1> No hay inventario</h1>
+          }
+        </div>
       </div>
+
     </div>
   )
 }

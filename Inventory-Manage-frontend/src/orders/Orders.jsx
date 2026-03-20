@@ -1,4 +1,6 @@
 import './Orders.css'
+import { useAppContext } from '../context/TrialContext'
+
 export function Orderlist({ orderss, selectedfilters }) {
   return (
     orderss.filter(order => {
@@ -26,13 +28,14 @@ function Orders({ orderss, selectedfilters }) {
   )
 }
 
-export function ShowOrders({ orderss, selectedfilters }) {
+export function ShowOrders() {
+  const { selectedfilters, SelectedData } = useAppContext();
   return (
     <section className='orders'>
       <div className='color'>
         <h2>Pending Orders</h2>
-        <div className='ShowOrders'>
-          <Orders orderss={orderss} selectedfilters={selectedfilters} />
+        <div className='ShowElements Orders'>
+          <Orders orderss={SelectedData} selectedfilters={selectedfilters} />
         </div>
         <button>Create Order</button>
       </div>

@@ -1,27 +1,17 @@
-.show {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 90vw;
-}
 
 .ShowCards {
-  padding: 10px;
+
   display: flex;
   width: 85vw;
-  height: 80vh;
+  height: 75vh;
   overflow-y: auto;
-  background-color: var(--Backg-color);
   border-radius: 25px;
-  box-shadow: 1px 1px 4px var(--input-shadow);
 }
 
 .Cards {
   height: 250px;
   width: 200px;
-  background-color: var(--Backg-color);
-  box-shadow: inset 1px 1px 6px 5px rgba(0, 0, 0, .3),
-    5px 5px 0 rgba(0, 0, 0, .3);
+  border: solid 1px;
   border-radius: 20px;
 }
 
@@ -34,20 +24,18 @@
 .Info {
   text-align: left;
   font-size: .87rem;
-  background-color: var(--bgn-body);
-  min-height: 100px;
-  max-height: 100px;
+
   height: auto;
-  border-radius: 10px;
   padding: 0 5px;
-  border: solid .1px rgb(173, 154, 154) ;
+  padding: 5px;
 }
 
+/*Esto no se cambia ni por la gran pucta*/
 .inventario {
   width: 100%;
   padding: 1rem;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
 }

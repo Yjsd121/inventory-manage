@@ -86,9 +86,16 @@
 
 .Deployment{
   width: 100%;
-
+  transition: .3s;
 }
 
+.left{
+  justify-content: left;
+}
+.right{
+
+  justify-content: right;
+}
 .arrow:active {
   transform: rotate(180deg);
   transition: .3s;
@@ -96,6 +103,7 @@
 
 .rotate {
   transform: rotate(180deg);
+  transition: .3s;
 }
 
 .hidde {

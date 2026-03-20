@@ -1,5 +1,6 @@
 import './searchbar.css'
 import { useState, useEffect } from 'react'
+import { useAppContext } from '../../context/TrialContext'
 
 function Listfilter({ filter, values, onChange }) {
   return (
@@ -28,22 +29,23 @@ function Listfilter({ filter, values, onChange }) {
   )
 }
 
-export function SearchBar({ endpoint, filters, setFilters, setselectedData }) {
-  const [selectedFilters, setSelectedFilters] = useState({})
+export function SearchBar({ endpoint, filters }) {
   const [Flag, setFlag] = useState(true)
-  
+
+
+  const { selectedfilters, setFilters, setselectedData } = useAppContext();
   useEffect(() => {
     const initialFilters = {}
     Object.entries(filters).forEach(([name, options]) => {
       initialFilters[name] = options[0]
     })
-    
+
     setFilters(initialFilters)
-    console.log(initialFilters,endpoint)
+    console.log(initialFilters, endpoint)
   }, [endpoint])
 
   const handleFilterChange = (filterName, value) => {
-    setSelectedFilters(prev => ({
+    setFilters(prev => ({
       ...prev,
       [filterName]: value
     }))
@@ -62,19 +64,18 @@ export function SearchBar({ endpoint, filters, setFilters, setselectedData }) {
         setselectedData(value)
       })
       .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
-  }, [Flag,endpoint])
+  }, [Flag, endpoint])
 
   const handleSetfilter = () => {
-    setFilters(selectedFilters)
     setFlag(!Flag)
-    setSelectedFilters({})
+    setFilters({})
   }
 
   return (
     <section className='Search-container'>
       <Listfilter
         filter={filters}
-        values={selectedFilters}
+        values={selectedfilters}
         onChange={handleFilterChange}
       />
 

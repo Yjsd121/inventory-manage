@@ -33,7 +33,7 @@ export function BarNav({ view, setview }) {
         <div className='logout' >
           <li>< LogoutIcon /><span className={show ? "text" : "text hide"}>Logout</span></li>
         </div>
-        <div className='Deployment' onClick={() => {
+        <div className={rotate ? 'Deployment right' : 'Deployment left'} onClick={() => {
           setrotate(!rotate)
           setshow(!show)
         }}>
@@ -45,3 +45,5 @@ export function BarNav({ view, setview }) {
     </section>
   )
 }
+
+
