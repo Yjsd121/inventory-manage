@@ -3,26 +3,22 @@ import { Profileview } from '../Profile/profile'
 import { SearchBar } from '../components/SearchBar/searchbar'
 import { ShowCards } from '../Products/Cards'
 import { Dashboard } from '../Dashboard/Dashboard'
-import { useAppContext } from '../context/TrialContext'
+import { MiniDashboard } from '../components/CHART/MiniDashboards'
 
-import cards from '../mocks/ProductsFilters.json'
+
 import filterss from '../mocks/Ordersfilters.json'
 import userfil from '../mocks/usersfilters.json'
 export function Vistas({ valor }) {
-  const { selectedfilters, SelectedData } = useAppContext();
   if (valor === "Dashboard") {
     return (
-      <div>
+      <div className='Right'>
         <Dashboard />
       </div>)
   } else if (valor === "Products") {
     return (
-      <div>
-        <SearchBar
-          endpoint={valor}
-          filters={cards.productFilters}
-        />
-        <ShowCards />
+      <div className='Right'>
+        <MiniDashboard />
+        <ShowCards endpoint={valor} />
       </div>
     )
   } else if (valor === "Orders") {

@@ -1,5 +1,8 @@
 import './Cards.css'
 import { useAppContext } from '../context/TrialContext'
+import { SearchBar } from '../components/SearchBar/searchbar'
+import cards from '../mocks/ProductsFilters.json'
+
 
 function Cards({ Item, selectedfilters }) {
   return (
@@ -15,7 +18,6 @@ function Cards({ Item, selectedfilters }) {
               <div className='Cards'>
                 <img src='/react.svg' />
                 <div className='Info'>
-                  <p>Id: {item.Id}</p>
                   <p>Name: {item.Name}</p>
                   <p>status: {item.Status}</p>
                   <p>Cant:{item.Quantity}</p>
@@ -29,13 +31,17 @@ function Cards({ Item, selectedfilters }) {
   )
 }
 
-export function ShowCards() {
+export function ShowCards({ endpoint }) {
   const { SelectedData, selectedfilters } = useAppContext()
   const hasinventory = SelectedData?.length > 0
-  
+
   return (
     <div className='show'>
       <div className='color'>
+        <SearchBar
+          endpoint={endpoint}
+          filters={cards.productFilters}
+        />
         <div className='ShowCards'>
           {
             hasinventory

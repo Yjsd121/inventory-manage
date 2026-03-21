@@ -21,6 +21,7 @@
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
     "@vitejs/plugin-react": "^5.1.2",
+    "chart.js": "^4.5.1",
     "primereact": "^10.9.7",
     "react": "19.2.3",
     "react-dom": "19.2.3",

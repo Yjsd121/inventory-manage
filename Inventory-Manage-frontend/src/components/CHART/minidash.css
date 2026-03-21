@@ -1,0 +1,8 @@
+.MiniDashboard{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 10vh;
+  margin: 10px 0px 10px;
+}
+

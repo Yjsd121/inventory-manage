@@ -1,41 +1,36 @@
-
 .ShowCards {
-
-  display: flex;
-  width: 85vw;
-  height: 75vh;
+  width: 100%;
+  max-height: 75vh;
   overflow-y: auto;
   border-radius: 25px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
-
 .Cards {
-  height: 250px;
-  width: 200px;
-  border: solid 1px;
-  border-radius: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: white;
+  box-sizing: border-box;
 }
 
 .Cards img {
-  height: 150px;
-  width: 200px;
-
+  width: 100px;
+  display: block;
+  margin: 0 auto;
 }
 
 .Info {
-  text-align: left;
-  font-size: .87rem;
-
-  height: auto;
-  padding: 0 5px;
-  padding: 5px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 /*Esto no se cambia ni por la gran pucta*/
 .inventario {
   width: 100%;
-  padding: 1rem;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
 }
