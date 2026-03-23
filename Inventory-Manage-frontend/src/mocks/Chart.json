@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "available": 6,
+    "out_stock": 2,
+    "Low_Stock": 8
+  },
+  "labels": [
+    {
+      "id": 1,
+      "name": "TotalProducts",
+      "value": 16
+    },
+    {
+      "id": 2,
+      "name": "Available",
+      "value": 6
+    },
+    {
+      "id": 3,
+      "name": "Out of Stock",
+      "value": 2
+    },
+    {
+      "id": 4,
+      "name": "Low stock",
+      "value": 8
+    }
+  ]
+}

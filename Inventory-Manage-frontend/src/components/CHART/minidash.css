@@ -1,8 +1,61 @@
-.MiniDashboard{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  height: 10vh;
-  margin: 10px 0px 10px;
+.MiniDashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
 }
 
+.chart {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  margin: 10px 0 10px;
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  background-color: var(--Backg-color);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.chart:hover {
+  background: #8f8888;
+}
+
+.title {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.indicador {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: #52c41a;
+}
+
+.yellow {
+  background-color: #faad14;
+}
+
+.red {
+  background-color: #ff4d4f;
+}
