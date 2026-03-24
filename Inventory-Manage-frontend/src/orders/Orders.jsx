@@ -44,7 +44,7 @@ export function ShowOrders({ endpoint }) {
         <div className='ShowElements Orders'>
           <Orders orderss={SelectedData} selectedfilters={selectedfilters} />
         </div>
-        <button>Create Order</button>
+        
       </div>
     </section>
   )

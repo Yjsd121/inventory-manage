@@ -1,16 +1,22 @@
 import './Dashboard.css'
+import MyChart from './charts/TotalProducts'
 
-export function Dashboard() {
+export function Dashboard({ endpoint }) {
+
   return (
-    <div class="parent">
-      <div class="div1">1</div>
-      <div class="div2">2</div>
-      <div class="div3">3</div>
-      <div class="div4">4</div>
-      <div class="div5">5</div>
-      <div class="div6">6</div>
-      <div class="div7">7</div>
-      <div class="div8">8</div>
+    <div className="dashboard">
+      <div className="card c1">1</div>
+      <div className="card c2">2</div>
+      <div className="card c3">3</div>
+      <div className="card c4">4</div>
+
+      <div className="card c5">
+        <MyChart></MyChart>
+      </div>
+
+      <div className="card c6">6</div>
+      <div className="card c7">7</div>
+      <div className="card c8">8</div>
     </div>
   )
 }

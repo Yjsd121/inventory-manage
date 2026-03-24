@@ -37,7 +37,7 @@ export function ShowCards({ endpoint }) {
 
   return (
     <div className='show'>
-      <h2>Inventory</h2>
+      <h2>INVENTARIO</h2>
       <div className='color'>
         <SearchBar
           endpoint={endpoint}

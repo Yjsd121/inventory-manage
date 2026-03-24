@@ -12,7 +12,7 @@ export function Vistas({ valor }) {
   if (valor === "Dashboard") {
     return (
       <div className='Right'>
-        <Dashboard />
+        <Dashboard endpoint={valor}/>
       </div>)
   } else if (valor === "Products") {
     return (

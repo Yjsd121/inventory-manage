@@ -21,6 +21,14 @@ app.get('/Products', async (req, res) => {
   })
 })
 
+app.get('/Dashboard', async (req, res) => {
+  const rows = await Query('SELECT SUM(Quantity) as Total, Category FROM inventory_manage.products GROUP BY Category')
+  console.log(rows)
+  res.json({
+    Products: rows
+  })
+})
+
 app.listen(port, () => {
   console.log(`Server listen in http://localhost:${port}`)
 })
