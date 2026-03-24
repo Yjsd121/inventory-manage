@@ -23,12 +23,9 @@ export function Vistas({ valor }) {
     )
   } else if (valor === "Orders") {
     return (
-      <div>
-        <SearchBar
-          endpoint={valor}
-          filters={filterss.orderFilters}
-        />
-        <ShowOrders />
+      <div className='Right'>
+        <MiniDashboard />
+        <ShowOrders endpoint={valor}/>
       </div>
     )
   } else if (valor === "Users") {

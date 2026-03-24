@@ -16,19 +16,8 @@
   margin: 10px 0 10px;
 }
 
-.chart {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  background-color: var(--Backg-color);
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
 .chart:hover {
-  background: #8f8888;
+  background: #dddddd;
 }
 
 .title {
@@ -58,4 +47,39 @@
 
 .red {
   background-color: #ff4d4f;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #6d6d6d;
+}
+
+.header p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.add-btn {
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.other{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.other button{
+  margin: 0 5px 0;
 }

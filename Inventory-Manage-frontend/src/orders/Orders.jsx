@@ -1,5 +1,7 @@
 import './Orders.css'
 import { useAppContext } from '../context/TrialContext'
+import { SearchBar } from '../components/SearchBar/searchbar'
+import orderFilterss from '../mocks/Ordersfilters.json'
 
 export function Orderlist({ orderss, selectedfilters }) {
   return (
@@ -28,12 +30,17 @@ function Orders({ orderss, selectedfilters }) {
   )
 }
 
-export function ShowOrders() {
+export function ShowOrders({ endpoint }) {
   const { selectedfilters, SelectedData } = useAppContext();
   return (
     <section className='orders'>
+      <h2>Pending Orders</h2>
       <div className='color'>
-        <h2>Pending Orders</h2>
+        <SearchBar
+          endpoint={endpoint}
+          filters={orderFilterss.orderFilters}
+        />
+
         <div className='ShowElements Orders'>
           <Orders orderss={SelectedData} selectedfilters={selectedfilters} />
         </div>

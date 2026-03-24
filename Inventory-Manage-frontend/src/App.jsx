@@ -12,7 +12,11 @@ export function App() {
     <AppProvider>
       <main>
         <BarNav view={view} setview={setview} />
-        <Vistas valor={view} />
+        <div className="Right">
+          <div className="content">
+            <Vistas valor={view} />
+          </div>
+        </div>
       </main>
     </AppProvider>
   )
