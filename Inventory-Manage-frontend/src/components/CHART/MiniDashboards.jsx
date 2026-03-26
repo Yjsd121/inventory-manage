@@ -1,9 +1,11 @@
-import { Chart } from 'primereact/chart';
 import './minidash.css'
-import { getcolor } from '../../utils/getcolor';
 import chart from '../../mocks/Chart.json'
+import { KipsMap } from '../../utils/kips'
+import { useChartData } from '../../utils/Datachats'
 
-export function MiniDashboard() {
+export function MiniDashboard({valor}) {
+  const data = useChartData(`Kips/${valor}`)
+  console.log(data, chart)
   return (
     <section >
       <div className="header">
@@ -20,17 +22,11 @@ export function MiniDashboard() {
       </div>
 
       <div className='MiniDashboard'>
-        {chart.labels.map((item, index) => (
-          <div className='chart' key={index}>
-
-            <span className='title'>{item.name}</span>
-
-            <span className='value'>{item.value}</span>
-
-            <div className={`indicador ${getcolor(item.value)}`}></div>
-
-          </div>
-        ))}
+        {!data?.labels ? (
+          <p>Cargando...</p>
+        ) : (
+          <KipsMap chart={data} />
+        )}
       </div>
     </section>
   )

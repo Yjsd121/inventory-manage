@@ -9,33 +9,33 @@ import { MiniDashboard } from '../components/CHART/MiniDashboards'
 import filterss from '../mocks/Ordersfilters.json'
 import userfil from '../mocks/usersfilters.json'
 export function Vistas({ valor }) {
-  if (valor === "Dashboard") {
+  if (valor === "dashboard") {
     return (
       <div className='Right'>
         <Dashboard endpoint={valor}/>
       </div>)
-  } else if (valor === "Products") {
+  } else if (valor === "products") {
     return (
       <div className='Right'>
-        <MiniDashboard />
+        <MiniDashboard valor={valor}/>
         <ShowCards endpoint={valor} />
       </div>
     )
-  } else if (valor === "Orders") {
+  } else if (valor === "orders") {
     return (
       <div className='Right'>
-        <MiniDashboard />
+        <MiniDashboard valor={valor}/>
         <ShowOrders endpoint={valor}/>
       </div>
     )
-  } else if (valor === "Users") {
+  } else if (valor === "users") {
     return (
       <SearchBar
         endpoint={valor}
         filters={userfil.UserFilters}
       />
     )
-  } else if (valor === "Profile") {
+  } else if (valor === "profile") {
     return (
       <Profileview />
     )

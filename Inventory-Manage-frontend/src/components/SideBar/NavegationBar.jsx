@@ -12,7 +12,6 @@ export function BarNav({ view, setview }) {
   const [rotate, setrotate] = useState(true)
   const [show, setshow] = useState(true)
 
-  console.log(show)
   return (
     <section className={show ? 'main' : 'main hidde'}>
       <div className='logo'>
@@ -23,11 +22,26 @@ export function BarNav({ view, setview }) {
 
         <div className='bar'>
           <ul>
-            <li className={view === "Dashboard" ? 'active' : ''} onClick={() => setview("Dashboard")}><DashboardIcon /> <span className={show ? "text" : "text hide"}>Dashboard</span></li>
-            <li className={view === "Products" ? 'active' : ''} onClick={() => setview("Products")}><Inventory2Icon /> <span className={show ? "text" : "text hide"}>Products</span></li>
-            <li className={view === "Orders" ? 'active' : ''} onClick={() => setview("Orders")}><AlignHorizontalLeftIcon /> <span className={show ? "text" : "text hide"}>Orders</span></li>
-            <li className={view === "Users" ? 'active' : ''} onClick={() => setview("Users")}><GroupIcon /><span className={show ? "text" : "text hide"}>Users</span></li>
-            <li className={view === "Profile" ? 'active' : ''} onClick={() => setview("Profile")}><AccountCircleIcon /> <span className={show ? "text" : "text hide"}>Profile</span></li>
+            <li className={view === "dashboard" ? 'active' : ''} onClick={() => setview("dashboard")}>
+              <DashboardIcon />
+              <span className={show ? "text" : "text hide"}>Dashboard</span>
+            </li>
+            <li className={view === "products" ? 'active' : ''} onClick={() => setview("products")}>
+              <Inventory2Icon />
+              <span className={show ? "text" : "text hide"}>Products</span>
+            </li>
+            <li className={view === "orders" ? 'active' : ''} onClick={() => setview("orders")}>
+              <AlignHorizontalLeftIcon />
+              <span className={show ? "text" : "text hide"}>Orders</span>
+            </li>
+            <li className={view === "users" ? 'active' : ''} onClick={() => setview("users")}>
+              <GroupIcon />
+              <span className={show ? "text" : "text hide"}>Users</span>
+            </li>
+            <li className={view === "profile" ? 'active' : ''} onClick={() => setview("profile")}>
+              <AccountCircleIcon />
+              <span className={show ? "text" : "text hide"}>Profile</span>
+            </li>
           </ul>
         </div>
         <div className='logout' >

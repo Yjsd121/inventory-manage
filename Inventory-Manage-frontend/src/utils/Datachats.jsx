@@ -6,20 +6,14 @@ export function useChartData(endpoint) {
   useEffect(() => {
     fetch(`http://localhost:3000/${endpoint}`)
       .then(res => {
-        if (!res.ok) {
-          throw new Error("Server error")
-        }
+        if (!res.ok) throw new Error("Server error")
         return res.json()
       })
       .then(data => {
-        if (Array.isArray(data)) {
-          setChartData(data)
-        } else {
-          setChartData(data.data || [])
-        }
+        setChartData(data || [])
       })
-      .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
-  }, [endpoint]) 
+      .catch(error => console.log(error))
+  }, [endpoint])
 
   return chartData
 }

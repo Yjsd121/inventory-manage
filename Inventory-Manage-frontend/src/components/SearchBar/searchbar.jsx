@@ -41,7 +41,7 @@ export function SearchBar({ endpoint, filters }) {
     })
 
     setFilters(initialFilters)
-    console.log(initialFilters, endpoint)
+    // console.log(initialFilters, endpoint)
   }, [endpoint])
 
   const handleFilterChange = (filterName, value) => {
