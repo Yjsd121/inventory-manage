@@ -6,7 +6,7 @@ import { AppProvider } from './context/TrialContext'
 
 
 export function App() {
-  const [view, setview] = useState("Dashboard")
+  const [view, setview] = useState("dashboard")
 
   return (
     <AppProvider>

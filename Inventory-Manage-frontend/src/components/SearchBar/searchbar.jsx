@@ -33,7 +33,8 @@ export function SearchBar({ endpoint, filters }) {
   const [Flag, setFlag] = useState(true)
 
 
-  const { selectedfilters, setFilters, setselectedData } = useAppContext();
+  const { selectedfilters, setFilters, setselectedData } = useAppContext()
+  
   useEffect(() => {
     const initialFilters = {}
     Object.entries(filters).forEach(([name, options]) => {
@@ -41,7 +42,7 @@ export function SearchBar({ endpoint, filters }) {
     })
 
     setFilters(initialFilters)
-    // console.log(initialFilters, endpoint)
+    
   }, [endpoint])
 
   const handleFilterChange = (filterName, value) => {

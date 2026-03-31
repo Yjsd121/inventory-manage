@@ -6,7 +6,6 @@ import { Dashboard } from '../Dashboard/Dashboard'
 import { MiniDashboard } from '../components/CHART/MiniDashboards'
 
 
-import filterss from '../mocks/Ordersfilters.json'
 import userfil from '../mocks/usersfilters.json'
 export function Vistas({ valor }) {
   if (valor === "dashboard") {
