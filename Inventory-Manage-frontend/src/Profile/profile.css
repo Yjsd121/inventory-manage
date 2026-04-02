@@ -4,19 +4,19 @@
   justify-content: center;
   align-items: center;
   width: 90vw;
+  height: 90vh;
+  gap: 1rem;
 }
 
 .panel {
   background-color: var(--Backg-color);
   box-shadow: 1px 1px 4px var(--input-shadow);
-  margin: 0 10px;
-  height: 85vh;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20px 0;
   border-radius: 25px;
-  
+  height: 100%;
+  margin-top: 10px;
 }
 .padding{
   display: flex;

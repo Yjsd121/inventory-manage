@@ -72,7 +72,7 @@ app.get('/Products', async (req, res) => {
   })
 })
 
-app.get('/Dashboard', async (req, res) => {
+app.get('/dashboard', async (req, res) => {
   const tproducts = await Query('SELECT SUM(Quantity) as T_products from inventory_manage.products')
   const tsales = await Query('SELECT SUM(Quantity) as T_Sales from inventory_manage.orders WHERE Status = \'closed\'')
   const torders = await Query('SELECT SUM(Quantity) as T_orders from inventory_manage.orders')

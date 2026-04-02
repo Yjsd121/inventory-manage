@@ -1,10 +1,10 @@
 :root {
-  --Backg-color: white;
-  --btn-color:#e6dede;
+  --Backg-color: rgb(255, 255, 255);
+  --btn-color:#e4e3e3;
   --input-shadow: rgba(0, 0, 0, .5);
-  --order-cardbgn:rgb(240, 237, 237);
-  --bgn-body:#f3f2f2;
-  --barnav-textcolor: #000
+  --order-cardbgn:rgb(255, 255, 255);
+  --bgn-body:rgba(236, 236, 236, 0.8);
+  --barnav-textcolor: #1F2937
 }
 
 button {
@@ -27,7 +27,7 @@ button:active {
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {

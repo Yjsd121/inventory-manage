@@ -1,11 +1,13 @@
 import './NavegationBar.css'
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import Inventory2Icon from '@mui/icons-material/Inventory2';
-import AlignHorizontalLeftIcon from '@mui/icons-material/AlignHorizontalLeft';
-import GroupIcon from '@mui/icons-material/Group';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
+
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
+
 import { useState } from 'react';
 
 export function BarNav({ view, setview }) {
@@ -23,39 +25,40 @@ export function BarNav({ view, setview }) {
         <div className='bar'>
           <ul>
             <li className={view === "dashboard" ? 'active' : ''} onClick={() => setview("dashboard")}>
-              <DashboardIcon />
+              <DashboardOutlinedIcon />
               <span className={show ? "text" : "text hide"}>Dashboard</span>
             </li>
             <li className={view === "products" ? 'active' : ''} onClick={() => setview("products")}>
-              <Inventory2Icon />
+              <Inventory2OutlinedIcon />
               <span className={show ? "text" : "text hide"}>Products</span>
             </li>
             <li className={view === "orders" ? 'active' : ''} onClick={() => setview("orders")}>
-              <AlignHorizontalLeftIcon />
+              <BorderColorOutlinedIcon />
               <span className={show ? "text" : "text hide"}>Orders</span>
             </li>
             <li className={view === "users" ? 'active' : ''} onClick={() => setview("users")}>
-              <GroupIcon />
+              <PeopleAltOutlinedIcon />
               <span className={show ? "text" : "text hide"}>Users</span>
             </li>
             <li className={view === "profile" ? 'active' : ''} onClick={() => setview("profile")}>
-              <AccountCircleIcon />
+              <AccountCircleOutlinedIcon />
               <span className={show ? "text" : "text hide"}>Profile</span>
             </li>
           </ul>
         </div>
-        <div className='logout' >
-          <li>< LogoutIcon /><span className={show ? "text" : "text hide"}>Logout</span></li>
-        </div>
-        <div className={rotate ? 'Deployment right' : 'Deployment left'} onClick={() => {
-          setrotate(!rotate)
-          setshow(!show)
-        }}>
-          <li><ArrowForwardIosIcon
-            className={rotate ? "arrow rotate" : 'arrow no'}
-          /></li>
-        </div>
+
       </nav>
+      <div className='logout' >
+        <li>< LogoutIcon /><span className={show ? "text" : "text hide"}>Logout</span></li>
+      </div>
+      <div className={rotate ? 'Deployment right' : 'Deployment left'} onClick={() => {
+        setrotate(!rotate)
+        setshow(!show)
+      }}>
+        <li><ArrowLeftOutlinedIcon
+          className={rotate ? "arrow" : 'arrow '}
+        /></li>
+      </div>
     </section>
   )
 }

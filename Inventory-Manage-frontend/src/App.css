@@ -19,20 +19,13 @@ main {
 .Right{
   width: 100%;
   padding: 10px 0 0;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 .content {
   width: 99%;
 }
 
-.color {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 1px 1px 4px var(--input-shadow);
-  width: 100%;
-}
 
 .ShowElements {
   display: flex;
