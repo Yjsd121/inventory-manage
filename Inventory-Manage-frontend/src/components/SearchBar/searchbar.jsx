@@ -34,7 +34,7 @@ export function SearchBar({ endpoint, filters }) {
 
 
   const { selectedfilters, setFilters, setselectedData } = useAppContext()
-  
+
   useEffect(() => {
     const initialFilters = {}
     Object.entries(filters).forEach(([name, options]) => {
@@ -42,7 +42,7 @@ export function SearchBar({ endpoint, filters }) {
     })
 
     setFilters(initialFilters)
-    
+
   }, [endpoint])
 
   const handleFilterChange = (filterName, value) => {
@@ -80,10 +80,11 @@ export function SearchBar({ endpoint, filters }) {
         onChange={handleFilterChange}
       />
 
-      <input type='checkbox' />
-      <input type='text' className='input' />
+      <div className='search'>
+        <input type='text' className='input' />
+        <button onClick={handleSetfilter}>Search</button>
+      </div>
 
-      <button onClick={handleSetfilter}>Search</button>
     </section>
   )
 }

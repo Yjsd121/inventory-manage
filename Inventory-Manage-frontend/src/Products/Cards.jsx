@@ -1,8 +1,7 @@
 import './Cards.css'
 import { useAppContext } from '../context/TrialContext'
-import { SearchBar } from '../components/SearchBar/searchbar'
-import cards from '../mocks/ProductsFilters.json'
-
+import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
 function Cards({ Item, selectedfilters }) {
   return (
@@ -23,6 +22,10 @@ function Cards({ Item, selectedfilters }) {
                   <p>Cant:{item.Quantity}</p>
                   <p>${item.Price}</p>
                 </div>
+                <div className='actions'>
+                  <button id='edit'><ModeEditOutlinedIcon/> Edit </button>
+                  <button id='delete'><DeleteForeverOutlinedIcon/> Delete</button>
+                </div>
               </div>
             </li>
           ))
@@ -37,12 +40,7 @@ export function ShowCards({ endpoint }) {
 
   return (
     <div className='show'>
-      <h2>INVENTARIO</h2>
       <div className='color'>
-        <SearchBar
-          endpoint={endpoint}
-          filters={cards.productFilters}
-        />
         <div className='ShowCards'>
           {
             hasinventory

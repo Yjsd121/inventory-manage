@@ -9,19 +9,20 @@
 
 button {
   width: 150px;
-  height: 25px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   background-color: var(--btn-color) ;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, .3);
   transition: .1s;
-
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  justify-content: center;
 }
 
 button:active,
 button:active {
-  box-shadow: 0 0 0 rgba(0, 0, 0, .3);
-  transform: translateY(2px);
+  transform: scale(1.1);
 }
 
 * {

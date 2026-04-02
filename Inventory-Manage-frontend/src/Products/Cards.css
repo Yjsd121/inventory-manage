@@ -42,3 +42,15 @@
   display: flex;
   justify-content: space-around;
 }
+.actions{
+  display: flex;
+  gap: .3rem;
+}
+.actions button#edit{
+  border: solid 1px rgb(255, 136, 0);
+  color: rgb(255, 136, 0);
+}
+.actions button#delete{
+  border: solid 1px rgba(255, 1, 1, 0.808);
+  color: rgba(255, 0, 0, 0.87);
+}

@@ -2,14 +2,14 @@ import './minidash.css'
 import chart from '../../mocks/Chart.json'
 import { KipsMap } from '../../utils/kips'
 import { useChartData } from '../../utils/Datachats'
-
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 export function MiniDashboard({ valor }) {
   const data = useChartData(`Kips/${valor}`)
   console.log(data, chart)
   return (
     <section >
       <div className="header">
-        <div>
+        <div className='head'>
           <h2>{valor}</h2>
           <p>Manage your inventory and stock levels</p>
         </div>
@@ -19,9 +19,7 @@ export function MiniDashboard({ valor }) {
             <p>hola</p>
             :
             <div className='other'>
-              <button className="add-btn green">+ Add {valor}</button>
-              <button className="add-btn yellow"> Edit</button>
-              <button className="add-btn red">- Delete </button>
+              <button className="add-btn green"><AddCircleOutlineOutlinedIcon/> Add {valor}</button>
             </div>
         }
       </div>
