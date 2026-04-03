@@ -16,7 +16,8 @@ main {
   margin: 0 20px;
   outline: none;
 }
-.Right{
+
+.Right {
   width: 100%;
   overflow-y: auto;
   scrollbar-width: none;
@@ -24,6 +25,7 @@ main {
   flex-direction: column;
   gap: 1rem;
 }
+
 .content {
   padding: 20px;
 }
@@ -33,4 +35,47 @@ main {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 1001;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+.modal-head{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+} 
+.modal-container h3{
+  font-size: 1.35rem;
+}
+.modal-container input{
+  padding: 3px 10px;
+  height: 30px;
+} 
+.modal-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }

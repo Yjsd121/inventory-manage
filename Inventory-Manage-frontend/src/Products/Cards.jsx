@@ -16,15 +16,15 @@ function Cards({ Item, selectedfilters }) {
             <li key={item.Id}>
               <div className='Cards'>
                 <img src='/react.svg' />
-                <div className='Info'>
-                  <p>Name: {item.Name}</p>
-                  <p>status: {item.Status}</p>
-                  <p>Cant:{item.Quantity}</p>
-                  <p>${item.Price}</p>
-                </div>
+
+                <p>Name: {item.Name}</p>
+                <p>status: {item.Status}</p>
+                <p>Cant:{item.Quantity}</p>
+                <p>${item.Price}</p>
+
                 <div className='actions'>
-                  <button id='edit'><ModeEditOutlinedIcon/> Edit </button>
-                  <button id='delete'><DeleteForeverOutlinedIcon/> Delete</button>
+                  <button id='edit'><ModeEditOutlinedIcon /> Edit </button>
+                  <button id='delete'><DeleteForeverOutlinedIcon /> Delete</button>
                 </div>
               </div>
             </li>

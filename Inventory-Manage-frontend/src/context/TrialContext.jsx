@@ -5,13 +5,15 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [selectedfilters, setFilters] = useState({})
   const [SelectedData, setselectedData] = useState({})
-
+  const [showmodal, setshowmodal] =useState(false)
   return (
     <AppContext.Provider value={{
       selectedfilters,
       setFilters,
       SelectedData,
-      setselectedData
+      setselectedData,
+      showmodal,
+      setshowmodal
     }}>
       {children}
     </AppContext.Provider>

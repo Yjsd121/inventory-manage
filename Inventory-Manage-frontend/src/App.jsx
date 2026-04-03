@@ -2,22 +2,24 @@ import './App.css'
 import { useState } from 'react'
 import { BarNav } from './components/SideBar/NavegationBar'
 import { Vistas } from './Router/Vistas'
-import { AppProvider } from './context/TrialContext'
-
+import { useAppContext } from './context/TrialContext'
+import { Modal } from './components/modal'
 
 export function App() {
   const [view, setview] = useState("dashboard")
-
+  const { showmodal } = useAppContext()
   return (
-    <AppProvider>
-      <main>
-        <BarNav view={view} setview={setview} />
-        <div className="Right">
-          <div className="content">
-            <Vistas valor={view} />
-          </div>
+    <main>
+      <BarNav view={view} setview={setview} />
+      <div className="Right">
+        <div className="content">
+          <Vistas valor={view} />
+          {
+            showmodal &&
+            <Modal view={view}/>
+          }
         </div>
-      </main>
-    </AppProvider>
+      </div>
+    </main>
   )
 }

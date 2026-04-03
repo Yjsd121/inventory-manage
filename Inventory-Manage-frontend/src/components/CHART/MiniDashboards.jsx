@@ -1,11 +1,12 @@
 import './minidash.css'
-import chart from '../../mocks/Chart.json'
 import { KipsMap } from '../../utils/kips'
 import { useChartData } from '../../utils/Datachats'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import { useAppContext } from '../../context/TrialContext';
 export function MiniDashboard({ valor }) {
   const data = useChartData(`Kips/${valor}`)
-  console.log(data, chart)
+  const {setshowmodal} = useAppContext()
+
   return (
     <section >
       <div className="header">
@@ -19,7 +20,7 @@ export function MiniDashboard({ valor }) {
             <p>hola</p>
             :
             <div className='other'>
-              <button className="add-btn green"><AddCircleOutlineOutlinedIcon/> Add {valor}</button>
+              <button onClick={()=>{setshowmodal(true)}} className="add-btn green"><AddCircleOutlineOutlinedIcon/> Add {valor}</button>
             </div>
         }
       </div>
