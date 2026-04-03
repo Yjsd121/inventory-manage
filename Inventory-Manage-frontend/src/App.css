@@ -31,11 +31,6 @@ main {
 }
 
 
-.ShowElements {
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
 
 .overlay {
   position: fixed;
@@ -55,25 +50,35 @@ main {
   padding: 30px;
   border-radius: 10px;
   z-index: 1001;
-  width: 600px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
 }
-.modal-head{
+
+.modal-head {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-} 
-.modal-container h3{
+}
+
+.modal-container h3 {
   font-size: 1.35rem;
 }
-.modal-container input{
-  padding: 3px 10px;
+
+.modal-container input,
+.modal-info input {
   height: 30px;
-} 
-.modal-info{
+  padding: 3px 10px;
+
+}
+
+.modal-info input {
+  width: 70px;
+}
+
+.modal-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
