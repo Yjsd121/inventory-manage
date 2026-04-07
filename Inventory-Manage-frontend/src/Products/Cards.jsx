@@ -9,8 +9,8 @@ function Cards({ Item, selectedfilters }) {
       {
         Item
           .filter(item => {
-            return ((item.category === selectedfilters.categories || selectedfilters.categories === 'all') &&
-              (item.status === selectedfilters.status || selectedfilters.status === 'all'))
+            return ((item.Category === selectedfilters.categories || selectedfilters.categories === 'all') &&
+              (item.Status === selectedfilters.status || selectedfilters.status === 'all'))
           })
           .map(item => (
             <li key={item.Id}>

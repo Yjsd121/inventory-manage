@@ -13,7 +13,6 @@ function Listfilter({ filter, values, onChange }) {
               value={values[filtername] || ''}
               onChange={(e) => onChange(filtername, e.target.value)}
             >
-              <option value=''>-- SELECT --</option>
               {
                 options.map(option => (
                   <option key={option} value={option}>

@@ -26,10 +26,10 @@ app.get('/Kips/:bd', async (req, res) => {
     table = 'orders'
     statuses = ['pending', 'canceled', 'closed']
   } else if (bd === 'dashboard') {
-    const tproducts = await Query('SELECT SUM(Quantity) as T_products from inventory_manage.products')
-    const tsales = await Query('SELECT SUM(Quantity) as T_Sales from inventory_manage.orders WHERE Status = \'closed\'')
-    const torders = await Query('SELECT SUM(Quantity) as T_orders from inventory_manage.orders')
-    const tpending = await Query('SELECT SUM(Quantity) as T_sales from inventory_manage.orders WHERE Status = \'pending\'')
+    const tproducts = await Query('SELECT count(*) as T_products from inventory_manage.products')
+    const tsales = await Query('SELECT count(*) as T_Sales from inventory_manage.orders WHERE Status = \'closed\'')
+    const torders = await Query('SELECT count(*) as T_orders from inventory_manage.orders')
+    const tpending = await Query('SELECT count(*) as T_sales from inventory_manage.orders WHERE Status = \'pending\'')
 
     const labels = [
       {
@@ -61,13 +61,13 @@ app.get('/Kips/:bd', async (req, res) => {
 
   try {
     const total = await Query(
-      `SELECT SUM(Quantity) as total FROM inventory_manage.${table}`
+      `SELECT count(*) as total FROM inventory_manage.${table}`
     )
 
     const results = await Promise.all(
       statuses.map(status =>
         Query(
-          `SELECT SUM(Quantity) as total 
+          `SELECT count(*) as total 
             FROM inventory_manage.${table} 
             WHERE Status = '${status}'`
         )
@@ -103,8 +103,8 @@ app.get('/Products', async (req, res) => {
 })
 
 app.get('/dashboard', async (req, res) => {
-  const Catp = await Query('SELECT SUM(Quantity) as Total, Category FROM inventory_manage.products GROUP BY Category')
-  const Cato = await Query('SELECT SUM(Quantity) as Total, Status From inventory_manage.Orders GROUP BY Status')
+  const Catp = await Query('SELECT count(*) as Total, Category FROM inventory_manage.products GROUP BY Category')
+  const Cato = await Query('SELECT count(*) as Total, Status From inventory_manage.Orders GROUP BY Status')
 
   res.json({
     P: Catp,

@@ -3,14 +3,8 @@
     "status": [
       "all",
       "pending",
-      "delivered",
-      "cancelled"
-    ],
-    "Price": [
-      "all",
-      "<10",
-      "11-50",
-      "50>"
+      "canceled",
+      "closed"
     ]
   }
 }

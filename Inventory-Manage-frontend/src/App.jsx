@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BarNav } from './components/SideBar/NavegationBar'
 import { Vistas } from './Router/Vistas'
 import { useAppContext } from './context/TrialContext'
@@ -7,7 +7,12 @@ import { Modal } from './components/modal'
 
 export function App() {
   const [view, setview] = useState("dashboard")
-  const { showmodal } = useAppContext()
+  const { showmodal, selectedfilters, SelectedData} = useAppContext()
+
+  useEffect(() => {
+    console.log(selectedfilters)
+    console.log(SelectedData)
+  }, [selectedfilters])
   return (
     <main>
       <BarNav view={view} setview={setview} />
@@ -16,7 +21,7 @@ export function App() {
           <Vistas valor={view} />
           {
             showmodal &&
-            <Modal view={view}/>
+            <Modal view={view} />
           }
         </div>
       </div>
