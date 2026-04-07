@@ -84,3 +84,6 @@
 .other button{
   margin: 0 5px 0;
 }
+.hiddebtn{
+  display: none;
+}

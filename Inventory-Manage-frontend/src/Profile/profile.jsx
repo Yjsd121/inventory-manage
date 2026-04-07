@@ -7,7 +7,7 @@ export function Profileview () {
 
   return (
     <section className='profile-container'>
-      <section className='panel lateral'>
+      <section className='panel'>
         <img className='profile-img' src='react.svg' />
         <h3>Yader Sáenz</h3>
         <p>cargo</p>
@@ -16,10 +16,10 @@ export function Profileview () {
           <a>Calendar</a>
         </nav>
       </section>
-      <section className='panel centro'>
+      <section className='panel'>
         <div className='padding'>
           <div className=' calendar container '>
-            {/* <DemoApp /> */}
+
           </div>
           <div className='container'>
             <h2>Task</h2>

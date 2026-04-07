@@ -21,7 +21,6 @@ export function BarNav({ view, setview }) {
         <p><span className={show ? "text" : "text hide"}>Inv Manage</span></p>
       </div>
       <nav className='nav'>
-
         <div className='bar'>
           <ul>
             <li className={view === "dashboard" ? 'active' : ''} onClick={() => setview("dashboard")}>

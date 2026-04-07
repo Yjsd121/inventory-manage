@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+
 }
 
 .nav {
@@ -70,7 +70,7 @@
 .active {
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: rgb(8, 37, 129);
+  background-color: #082581;
   color: white;
   border-radius: 10px;
 

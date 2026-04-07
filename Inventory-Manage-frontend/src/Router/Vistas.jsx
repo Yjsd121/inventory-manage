@@ -12,7 +12,7 @@ export function Vistas({ valor }) {
   if (valor === "dashboard") {
     return (
       <div >
-        <MiniDashboard valor={'products'}/>
+        <MiniDashboard valor={valor}/>
         <Dashboard endpoint={valor}/>
       </div>)
   } else if (valor === "products") {
