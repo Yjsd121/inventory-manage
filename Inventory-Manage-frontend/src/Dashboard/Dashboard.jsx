@@ -12,15 +12,17 @@ export function Dashboard() {
       <BarNav />
       <div className="Right">
         <div className="content">
-          <MiniDashboard valor= 'Dashboard'/>
+          <MiniDashboard valor='Dashboard' />
           <div className="dashboard">
 
             <div className="card c5">
-              <MyChart data={data.P}></MyChart>
+              <h2>Inventory</h2>
+              <MyChart data={data.P} ></MyChart>
             </div>
 
             <div className="card c6">
-              <MyChart data={data.O}></MyChart>
+              <h2>Orders types</h2>
+              <MyChart data={data.O} ></MyChart>
             </div>
 
 

@@ -6,8 +6,8 @@ export const AppProvider = ({ children }) => {
   const [selectedfilters, setFilters] = useState({})
   const [SelectedData, setselectedData] = useState({})
   const [showmodal, setshowmodal] = useState(false)
-  const [view, setview] = useState("dashboard")
-  
+
+
   return (
     <AppContext.Provider value={{
       selectedfilters,
@@ -15,9 +15,7 @@ export const AppProvider = ({ children }) => {
       SelectedData,
       setselectedData,
       showmodal,
-      setshowmodal,
-      view,
-      setview
+      setshowmodal
     }}>
       {children}
     </AppContext.Provider>

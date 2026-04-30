@@ -19,7 +19,7 @@ export default function MyChart({ data }) {
         <YAxis />
         <XAxis dataKey={labelKey} />
         <Tooltip />
-        <Bar dataKey="Total" fill="#082581" barSize={80}/>
+        <Bar dataKey="Total" fill="#082581" barSize={80} />
       </BarChart>
     </ResponsiveContainer>
   );

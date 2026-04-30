@@ -1,4 +1,5 @@
 import './NavegationBar.css'
+
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
@@ -7,14 +8,15 @@ import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
-import { useAppContext } from '../../context/TrialContext'
+
+import { usePagesContext } from '../../context/pagesContext';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export function BarNav() {
   const [rotate, setrotate] = useState(true)
-  const [show, setshow] = useState(true)
-  const { view, setview } = useAppContext()
+
+  const { show, setshow, view, setview } = usePagesContext()
 
   return (
     <section className={show ? 'main' : 'main hidde'}>
@@ -64,6 +66,8 @@ export function BarNav() {
           className={rotate ? "arrow" : 'arrow '}
         /></li>
       </div>
+
+
     </section>
   )
 }

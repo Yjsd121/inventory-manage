@@ -16,7 +16,7 @@ export function MiniDashboard({ valor }) {
           <p>Manage your inventory and stock levels</p>
         </div>
 
-        <div className={valor === 'dashboard' ? 'hiddebtn' : 'other'}>
+        <div className={valor === 'Dashboard' ? 'hiddebtn' : 'other'}>
           <button onClick={() => { setshowmodal(true) }} className="add-btn green"><AddCircleOutlineOutlinedIcon /> Add {valor}</button>
         </div>
 

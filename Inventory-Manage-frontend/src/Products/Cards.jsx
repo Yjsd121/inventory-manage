@@ -7,6 +7,7 @@ import { MiniDashboard } from '../components/CHART/MiniDashboards';
 import { BarNav } from '../components/SideBar/NavegationBar';
 import { SearchBar } from '../components/SearchBar/searchbar';
 import productsfilter from '../mocks/ProductsFilters.json'
+import { Modal } from '../components/modal';
 
 function Cards({ Item, selectedfilters }) {
   return (
@@ -40,7 +41,7 @@ function Cards({ Item, selectedfilters }) {
 }
 
 export function ShowCards() {
-  const { SelectedData, selectedfilters } = useAppContext()
+  const { showmodal, SelectedData, selectedfilters } = useAppContext()
   const hasinventory = SelectedData?.length > 0
 
   return (
@@ -60,7 +61,11 @@ export function ShowCards() {
                 }
               </div>
             </div>
+            {
 
+              showmodal && <Modal />
+
+            }
           </div>
         </div>
       </div>
