@@ -3,6 +3,10 @@ import { useAppContext } from '../context/TrialContext'
 import { SearchBar } from '../components/SearchBar/searchbar'
 import orderFilterss from '../mocks/Ordersfilters.json'
 
+import ordersfiltros from '../mocks/Ordersfilters.json'
+import { MiniDashboard } from '../components/CHART/MiniDashboards'
+import { BarNav } from '../components/SideBar/NavegationBar'
+
 export function Orderlist({ orderss, selectedfilters }) {
   return (
 
@@ -49,14 +53,19 @@ function Orders({ orderss, selectedfilters }) {
 export function ShowOrders({ endpoint }) {
   const { selectedfilters, SelectedData } = useAppContext();
   return (
-    <section className='orders'>
-      <SearchBar
-        endpoint={endpoint}
-        filters={orderFilterss.orderFilters}
-      />
-      <div className='ShowElements Orders'>
-        <Orders orderss={SelectedData} selectedfilters={selectedfilters} />
+    <main>
+      <BarNav />
+      <div className="Right">
+        <div className="content">
+          <MiniDashboard valor='orders' />
+          <SearchBar endpoint={'orders'} filters={orderFilterss.orderFilters} />
+          <section className='orders'>
+            <div className='ShowElements Orders'>
+              <Orders orderss={SelectedData} selectedfilters={selectedfilters} />
+            </div>
+          </section>
+        </div>
       </div>
-    </section>
+    </main>
   )
 }

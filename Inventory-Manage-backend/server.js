@@ -25,14 +25,14 @@ app.get('/Kips/:bd', async (req, res) => {
   } else if (bd === 'orders') {
     table = 'orders'
     statuses = ['pending', 'canceled', 'closed']
-  } else if (bd === 'dashboard') {
+  } else if (bd === 'Dashboard') {
     //
   } else {
     return res.status(400).json({ error: 'bd no válida' })
   }
 
   try {
-    if (bd === 'dashboard') {
+    if (bd === 'Dashboard') {
       console.log(bd)
       const tproducts = await Query('SELECT count(*) as T_products from inventory_manage.products')
       const tsales = await Query('SELECT count(*) as T_Sales from inventory_manage.orders WHERE Status = \'closed\'')

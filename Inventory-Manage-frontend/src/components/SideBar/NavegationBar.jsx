@@ -7,12 +7,14 @@ import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
-
+import { useAppContext } from '../../context/TrialContext'
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-export function BarNav({ view, setview }) {
+export function BarNav() {
   const [rotate, setrotate] = useState(true)
   const [show, setshow] = useState(true)
+  const { view, setview } = useAppContext()
 
   return (
     <section className={show ? 'main' : 'main hidde'}>
@@ -23,26 +25,30 @@ export function BarNav({ view, setview }) {
       <nav className='nav'>
         <div className='bar'>
           <ul>
-            <li className={view === "dashboard" ? 'active' : ''} onClick={() => setview("dashboard")}>
-              <DashboardOutlinedIcon />
-              <span className={show ? "text" : "text hide"}>Dashboard</span>
-            </li>
-            <li className={view === "products" ? 'active' : ''} onClick={() => setview("products")}>
-              <Inventory2OutlinedIcon />
-              <span className={show ? "text" : "text hide"}>Products</span>
-            </li>
-            <li className={view === "orders" ? 'active' : ''} onClick={() => setview("orders")}>
-              <BorderColorOutlinedIcon />
-              <span className={show ? "text" : "text hide"}>Orders</span>
-            </li>
-            <li className={view === "users" ? 'active' : ''} onClick={() => setview("users")}>
-              <PeopleAltOutlinedIcon />
-              <span className={show ? "text" : "text hide"}>Users</span>
-            </li>
-            <li className={view === "profile" ? 'active' : ''} onClick={() => setview("profile")}>
-              <AccountCircleOutlinedIcon />
-              <span className={show ? "text" : "text hide"}>Profile</span>
-            </li>
+            <NavLink to='/'>
+              <li className={`navlink `} >
+                <DashboardOutlinedIcon />
+                <span className={show ? "text" : "text hide"}>Dashboard</span>
+              </li>
+            </NavLink>
+            <NavLink to='/Products'>
+              <li className={`navlink `} >
+                <Inventory2OutlinedIcon />
+                <span className={show ? "text" : "text hide"}>Products</span>
+              </li>
+            </NavLink>
+            <NavLink to='/Orders'>
+              <li className={`navlink`} >
+                <BorderColorOutlinedIcon />
+                <span className={show ? "text" : "text hide"}>Orders</span>
+              </li>
+            </NavLink>
+            <NavLink to='/Profile'>
+              <li className={`navlink `} >
+                <AccountCircleOutlinedIcon />
+                <span className={show ? "text" : "text hide"}>Profile</span>
+              </li>
+            </NavLink>
           </ul>
         </div>
 

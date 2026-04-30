@@ -2,6 +2,11 @@ import './Cards.css'
 import { useAppContext } from '../context/TrialContext'
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import { MiniDashboard } from '../components/CHART/MiniDashboards';
+
+import { BarNav } from '../components/SideBar/NavegationBar';
+import { SearchBar } from '../components/SearchBar/searchbar';
+import productsfilter from '../mocks/ProductsFilters.json'
 
 function Cards({ Item, selectedfilters }) {
   return (
@@ -34,22 +39,31 @@ function Cards({ Item, selectedfilters }) {
   )
 }
 
-export function ShowCards({ endpoint }) {
+export function ShowCards() {
   const { SelectedData, selectedfilters } = useAppContext()
   const hasinventory = SelectedData?.length > 0
 
   return (
-    <div className='show'>
-      <div className='color'>
-        <div className='ShowCards'>
-          {
-            hasinventory
-              ? <Cards Item={SelectedData} selectedfilters={selectedfilters} />
-              : <h1> No hay inventario</h1>
-          }
+    <main>
+      <BarNav />
+      <div className="Right">
+        <div className="content">
+          <MiniDashboard valor='products' />
+          <SearchBar endpoint={'products'} filters={productsfilter.productFilters} />
+          <div className='show'>
+            <div className='color'>
+              <div className='ShowCards'>
+                {
+                  hasinventory
+                    ? <Cards Item={SelectedData} selectedfilters={selectedfilters} />
+                    : <h1> No hay inventario</h1>
+                }
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-
-    </div>
+    </main>
   )
 }

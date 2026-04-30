@@ -1,30 +1,29 @@
 import './App.css'
-import { useEffect, useState } from 'react'
-import { BarNav } from './components/SideBar/NavegationBar'
-import { Vistas } from './Router/Vistas'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useAppContext } from './context/TrialContext'
+
 import { Modal } from './components/modal'
 
-export function App() {
-  const [view, setview] = useState("dashboard")
-  const { showmodal, selectedfilters, SelectedData} = useAppContext()
+import { Dashboard } from './Dashboard/Dashboard'
+import { ShowCards } from './Products/Cards'
+import { ShowOrders } from './orders/Orders'
+import { Profileview } from './Profile/profile'
 
-  useEffect(() => {
-    console.log(selectedfilters)
-    console.log(SelectedData)
-  }, [selectedfilters])
+export function App() {
+  const { showmodal, selectedfilters, SelectedData } = useAppContext()
+
   return (
-    <main>
-      <BarNav view={view} setview={setview} />
-      <div className="Right">
-        <div className="content">
-          <Vistas valor={view} />
-          {
-            showmodal &&
-            <Modal view={view} />
-          }
-        </div>
-      </div>
-    </main>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/Products' element={<ShowCards />} />
+        <Route path='/Orders' element={<ShowOrders />} />
+        <Route path='/Profile' element={<Profileview />} />
+      </Routes>
+    </BrowserRouter>
+
+
   )
 }
