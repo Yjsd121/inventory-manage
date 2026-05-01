@@ -15,7 +15,6 @@ import { NavLink } from 'react-router-dom';
 
 export function BarNav() {
   const [rotate, setrotate] = useState(true)
-
   const { show, setshow, view, setview } = usePagesContext()
 
   return (

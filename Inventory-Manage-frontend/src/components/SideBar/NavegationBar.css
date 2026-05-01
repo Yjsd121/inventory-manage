@@ -1,76 +1,70 @@
 .main {
   background-color: var(--Backg-color);
-  height: 100%;
   width: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-right: 10px;
   color: var(--barnav-textcolor);
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 10px 5px;
 }
-
 
 .main .bar a {
   text-decoration: none;
+  display: block;
   color: inherit;
 }
 
-.main .bar a:visited {
-  color: inherit;
-}
 
 .main .bar a:active,
 .main .bar a:focus {
   outline: none;
 }
 
-
 .ProfileImg {
-  height: 75px;
-  width: 75px;
+  height: 70px;
+  width: 70px;
+  transition: 0.3s;
 }
 
 .icon {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
+  transition: 0.3s;
 }
-
 
 .logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 10vh;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+  gap: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .logout {
-  border-top: 1px solid rgba(128, 128, 128, 0.281);
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  padding-top: 10px;
 }
 
-
 .nav {
-  height: 70vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin: 0 5px;
+  margin: 10px 5px;
 }
 
 .bar {
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
   flex-direction: column;
 }
 
 .bar ul {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  text-size-adjust: initial;
+  gap: 0.5rem;
 }
 
 .bar li,
@@ -78,29 +72,47 @@
 .Deployment li {
   display: flex;
   align-items: center;
-  padding: 8px;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  position: relative;
 }
 
 .nav li:hover {
   cursor: pointer;
-  color: var(--barnav-textcolor);
-  background-color: rgba(197, 197, 197, 0.219);
-  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(8, 37, 129, 0.1), transparent);
+  transform: translateX(4px);
 }
-
 
 .active {
-  font-size: 1.25rem;
-  font-weight: bold;
-  background-color: #082581;
+  background: linear-gradient(90deg, #0824814d, #0a2fb367);
   color: white;
-  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(8, 37, 129, 0.4);
 }
 
+.active::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 20%;
+  height: 60%;
+  width: 4px;
+  border-radius: 4px;
+  background: white;
+}
+
+.logout li:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff4d4d;
+  transform: translateX(4px);
+}
 
 .Deployment {
   width: 100%;
   transition: 0.3s;
+  margin-top: 10px;
 }
 
 .rotate {
@@ -128,4 +140,11 @@
 .main,
 .hidde {
   transition: width 0.3s ease;
+}
+.arrow {
+  transition: transform 0.3s;
+}
+
+.rotated {
+  transform: rotate(180deg);
 }
