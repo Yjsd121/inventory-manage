@@ -69,7 +69,7 @@ export function ShowOrders({ endpoint }) {
       </div>
       {
 
-        showmodal && <Modal />
+        showmodal && <Modal filter={orderFilterss.orderFilters}/>
 
       }
     </main>

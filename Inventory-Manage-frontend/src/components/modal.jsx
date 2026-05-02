@@ -1,34 +1,91 @@
+import { useState } from "react"
 import { useAppContext } from "../context/TrialContext"
+import productsfilters from '../mocks/ProductsFilters.json'
 
-export function Modal({view}) {
+export function Modal({filter}) {
   const { setshowmodal } = useAppContext()
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    quantity: '',
+    price: ''
+  })
+
+  const handleChange = (name, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = () => {
+    console.log("DATA FINAL:", formData)
+
+    //fetch al backend 
+
+  }
+
   return (
     <section className='overlay'>
       <div className='modal-container'>
 
         <div className='modal-head'>
-          <h2>Add New {view}</h2>
+          <h2>Add New</h2>
           <p>Fill the information to create a new product</p>
+
           <h3>Name</h3>
-          <input />
+          <input
+            value={formData.name}
+            onChange={(e) => handleChange('name', e.target.value)}
+          />
         </div>
+
         <div className='modal-info'>
-          <h3>category</h3>
-          <select />
-          <h3>Status</h3>
-          <select />
+          {
+            Object.entries(filter).map(([filtername, options]) => (
+              <div key={filtername} className='filter'>
+                <label>{filtername}: </label>
+
+                <select
+                  value={formData[filtername] || ''}
+                  onChange={(e) => handleChange(filtername, e.target.value)}
+                >
+                  <option value="">Select...</option>
+
+                  {
+                    options.map(option => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))
+                  }
+                </select>
+
+              </div>
+            ))
+          }
         </div>
+
         <div className='modal-info'>
           <h3>Quantity</h3>
-          <input />
-          <h3>Price</h3>
-          <input />
-        </div>
-        <div className='modal-info'>
-          <button onClick={() => { setshowmodal(false) }}>Cancel</button>
-          <button>Add</button>
+          <input
+            value={formData.quantity}
+            onChange={(e) => handleChange('quantity', e.target.value)}
+          />
 
+          <h3>Price</h3>
+          <input
+            value={formData.price}
+            onChange={(e) => handleChange('price', e.target.value)}
+          />
         </div>
+
+        <div className='modal-info'>
+          <button onClick={() => setshowmodal(false)}>Cancel</button>
+          <button onClick={handleSubmit}>Add</button>
+        </div>
+
       </div>
     </section>
   )

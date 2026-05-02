@@ -63,7 +63,7 @@ export function ShowCards() {
             </div>
             {
 
-              showmodal && <Modal />
+              showmodal && <Modal filter={productsfilter.productFilters}/>
 
             }
           </div>

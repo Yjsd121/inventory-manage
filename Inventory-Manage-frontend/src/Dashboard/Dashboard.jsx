@@ -5,6 +5,7 @@ import { BarNav } from '../components/SideBar/NavegationBar'
 import { MiniDashboard } from '../components/CHART/MiniDashboards'
 
 export function Dashboard() {
+
   const data = useChartData('Dashboard')
 
   return (
@@ -25,10 +26,10 @@ export function Dashboard() {
               <MyChart data={data.O} ></MyChart>
             </div>
 
-
           </div>
         </div>
       </div>
     </main>
   )
+
 }
