@@ -6,7 +6,7 @@ import orderFilterss from '../mocks/Ordersfilters.json'
 import ordersfiltros from '../mocks/Ordersfilters.json'
 import { MiniDashboard } from '../components/CHART/MiniDashboards'
 import { BarNav } from '../components/SideBar/NavegationBar'
-import { Modal } from '../components/modal'
+import { OModal } from '../components/OrdersModal'
 
 export function Orderlist({ orderss, selectedfilters }) {
   return (
@@ -52,7 +52,7 @@ function Orders({ orderss, selectedfilters }) {
 }
 
 export function ShowOrders({ endpoint }) {
-  const { showmodal,selectedfilters, SelectedData } = useAppContext();
+  const { showmodal, selectedfilters, SelectedData } = useAppContext();
   return (
     <main>
       <BarNav />
@@ -68,9 +68,7 @@ export function ShowOrders({ endpoint }) {
         </div>
       </div>
       {
-
-        showmodal && <Modal filter={orderFilterss.orderFilters}/>
-
+        showmodal && <OModal filter={orderFilterss.orderFilters} />
       }
     </main>
   )

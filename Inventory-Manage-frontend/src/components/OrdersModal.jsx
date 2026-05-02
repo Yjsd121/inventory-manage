@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useAppContext } from "../context/TrialContext"
-import productsfilters from '../mocks/ProductsFilters.json'
+import Ordersfilters from '../mocks/Ordersfilters.json'
 
-export function Modal({filter}) {
-  const { setshowmodal } = useAppContext()
-
+export function OModal() {
+  const { showmodal, setshowmodal } = useAppContext()
+  const [Inv, setinv] = useState([])
+  const filters = Ordersfilters.orderFilters
 
   const [formData, setFormData] = useState({
     name: '',
@@ -22,9 +23,25 @@ export function Modal({filter}) {
   const handleSubmit = () => {
     console.log("DATA FINAL:", formData)
 
-    //fetch al backend 
-
   }
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/products`)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Server error")
+        }
+
+        return res.json()
+      })
+      .then(data => {
+        const value = Object.values(data)[0]
+        console.log(value)
+        setinv(value)
+      })
+      .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
+  }, [showmodal])
+
 
   return (
     <section className='overlay'>
@@ -43,7 +60,7 @@ export function Modal({filter}) {
 
         <div className='modal-info'>
           {
-            Object.entries(filter).map(([filtername, options]) => (
+            Object.entries(filters).map(([filtername, options]) => (
               <div key={filtername} className='filter'>
                 <label>{filtername}: </label>
 
@@ -51,7 +68,6 @@ export function Modal({filter}) {
                   value={formData[filtername] || ''}
                   onChange={(e) => handleChange(filtername, e.target.value)}
                 >
-                  <option value="">Select...</option>
 
                   {
                     options.map(option => (
@@ -65,6 +81,17 @@ export function Modal({filter}) {
               </div>
             ))
           }
+        </div>
+
+        <div className="modal-info">
+          <select>
+            {
+              Inv.map(item => (
+                <option key={item.Id}>{item.Name} C${item.Price}</option>
+
+              ))
+            }
+          </select>
         </div>
 
         <div className='modal-info'>

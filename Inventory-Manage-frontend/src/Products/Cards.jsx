@@ -7,7 +7,7 @@ import { MiniDashboard } from '../components/CHART/MiniDashboards';
 import { BarNav } from '../components/SideBar/NavegationBar';
 import { SearchBar } from '../components/SearchBar/searchbar';
 import productsfilter from '../mocks/ProductsFilters.json'
-import { Modal } from '../components/modal';
+import { PModal } from '../components/ProductsModal';
 
 function Cards({ Item, selectedfilters }) {
   return (
@@ -63,7 +63,7 @@ export function ShowCards() {
             </div>
             {
 
-              showmodal && <Modal filter={productsfilter.productFilters}/>
+              showmodal && <PModal />
 
             }
           </div>

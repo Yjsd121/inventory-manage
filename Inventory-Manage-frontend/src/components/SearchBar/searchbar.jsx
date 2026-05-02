@@ -30,8 +30,6 @@ function Listfilter({ filter, values, onChange }) {
 
 export function SearchBar({ endpoint, filters }) {
   const [Flag, setFlag] = useState(true)
-
-
   const { selectedfilters, setFilters, setselectedData } = useAppContext()
 
   useEffect(() => {
