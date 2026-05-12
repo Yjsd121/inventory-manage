@@ -58,33 +58,9 @@ export function OModal() {
           />
         </div>
 
-        <div className='modal-info'>
-          {
-            Object.entries(filters).map(([filtername, options]) => (
-              <div key={filtername} className='filter'>
-                <label>{filtername}: </label>
-
-                <select
-                  value={formData[filtername] || ''}
-                  onChange={(e) => handleChange(filtername, e.target.value)}
-                >
-
-                  {
-                    options.map(option => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))
-                  }
-                </select>
-
-              </div>
-            ))
-          }
-        </div>
 
         <div className="modal-info">
-          <select>
+          <select className="custom-select">
             {
               Inv.map(item => (
                 <option key={item.Id}>{item.Name} C${item.Price}</option>
@@ -106,6 +82,31 @@ export function OModal() {
             value={formData.price}
             onChange={(e) => handleChange('price', e.target.value)}
           />
+
+          <h3>Status: </h3>
+          {
+            Object.entries(filters).map(([filtername, options]) => (
+              <div key={filtername} className='filter'>
+
+
+                <select
+                  className="custom-select"
+                  value={formData[filtername] || ''}
+                  onChange={(e) => handleChange(filtername, e.target.value)}
+                >
+
+                  {
+                    options.map(option => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))
+                  }
+                </select>
+
+              </div>
+            ))
+          }
         </div>
 
         <div className='modal-info'>

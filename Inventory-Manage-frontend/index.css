@@ -1,18 +1,18 @@
 :root {
   --Backg-color: rgb(255, 255, 255);
-  --btn-color:#e4e3e3;
+  --btn-color: #e4e3e3;
   --input-shadow: rgba(0, 0, 0, .5);
-  --order-cardbgn:rgb(255, 255, 255);
-  --bgn-body:rgba(236, 236, 236, 0.8);
+  --order-cardbgn: rgb(255, 255, 255);
+  --bgn-body: rgba(236, 236, 236, 0.8);
   --barnav-textcolor: #1F2937
 }
 
 button {
   width: 150px;
-  height: 40px;
+  height: 42px;
   border-radius: 10px;
   border: none;
-  background-color: var(--btn-color) ;
+  background-color: var(--btn-color);
   transition: .1s;
   display: flex;
   align-items: center;
@@ -33,5 +33,5 @@ button:active {
 
 body {
   background: var(--bgn-body);
-  
+
 }

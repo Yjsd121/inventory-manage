@@ -45,11 +45,13 @@ export function PModal() {
           {
             Object.entries(filters).map(([filtername, options]) => (
               <div key={filtername} className='filter'>
-                <label>{filtername}: </label>
+                <h3>{filtername}: </h3>
 
                 <select
+                  className="custom-select"
                   value={formData[filtername] || ''}
                   onChange={(e) => handleChange(filtername, e.target.value)}
+
                 >
 
                   {
