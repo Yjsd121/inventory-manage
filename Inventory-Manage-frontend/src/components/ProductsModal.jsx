@@ -22,7 +22,7 @@ export function PModal() {
   const handleSubmit = () => {
     console.log("DATA FINAL:", formData)
 
-    //fetch al backend 
+
 
   }
 
@@ -41,14 +41,15 @@ export function PModal() {
           />
         </div>
 
-        <div className='modal-info'>
+        <div id="products" className='modal-info'>
           {
             Object.entries(filters).map(([filtername, options]) => (
-              <div key={filtername} className='filter'>
-                <h3>{filtername}: </h3>
+              <div key={filtername} >
+                <h3>{filtername} </h3>
 
                 <select
                   className="custom-select"
+                  style={{ "width": "200px" }}
                   value={formData[filtername] || ''}
                   onChange={(e) => handleChange(filtername, e.target.value)}
 
@@ -66,23 +67,25 @@ export function PModal() {
               </div>
             ))
           }
-        </div>
 
-        <div className='modal-info'>
-          <h3>Quantity</h3>
-          <input
-            value={formData.quantity}
-            onChange={(e) => handleChange('quantity', e.target.value)}
-          />
+          <div >
+            <h3>Quantity</h3>
+            <input
+              style={{ "width": "200px" }}
+              value={formData.quantity}
+              onChange={(e) => handleChange('quantity', e.target.value)}
+            />
+          </div>
 
-          <h3>Price</h3>
-          <input
-            value={formData.price}
-            onChange={(e) => handleChange('price', e.target.value)}
-          />
-        </div>
+          <div>
+            <h3>Price</h3>
+            <input
+              style={{ "width": "200px" }}
+              value={formData.price}
+              onChange={(e) => handleChange('price', e.target.value)}
+            />
+          </div>
 
-        <div className='modal-info'>
           <button onClick={() => setshowmodal(false)}>Cancel</button>
           <button onClick={handleSubmit}>Add</button>
         </div>

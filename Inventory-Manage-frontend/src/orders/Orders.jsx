@@ -10,7 +10,7 @@ import { OModal } from '../components/OrdersModal'
 
 export function Orderlist({ orderss, selectedfilters }) {
   return (
-
+    
     orderss.filter(order => {
       return ((order.Status === selectedfilters.status || selectedfilters.status === 'all') &&
         (order.Price === selectedfilters.Price || selectedfilters.Price === 'all'))

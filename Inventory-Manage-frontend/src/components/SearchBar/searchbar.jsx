@@ -10,6 +10,7 @@ function Listfilter({ filter, values, onChange }) {
           <div key={filtername} className='filter'>
             <label>{filtername}: </label>
             <select
+              className='custom-select'
               value={values[filtername] || ''}
               onChange={(e) => onChange(filtername, e.target.value)}
             >
