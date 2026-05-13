@@ -6,7 +6,7 @@ import { MiniDashboard } from '../components/CHART/MiniDashboards';
 
 import { BarNav } from '../components/SideBar/NavegationBar';
 import { SearchBar } from '../components/SearchBar/searchbar';
-import productsfilter from '../mocks/ProductsFilters.json'
+import { productFilters } from '../static/ProductsFilters.js'
 import { PModal } from '../components/ProductsModal';
 
 function Cards({ Item, selectedfilters }) {
@@ -50,7 +50,7 @@ export function ShowCards() {
       <div className="Right">
         <div className="content">
           <MiniDashboard valor='products' />
-          <SearchBar endpoint={'products'} filters={productsfilter.productFilters} />
+          <SearchBar endpoint={'products'} filters={ productFilters} />
           <div className='show'>
             <div className='color'>
               <div className='ShowCards'>

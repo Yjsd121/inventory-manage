@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useAppContext } from "../context/TrialContext"
-import Ordersfilters from '../mocks/Ordersfilters.json'
+import {orderFilters} from '../static/Ordersfilters.js'
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
 export function OModal() {
   const { showmodal, setshowmodal } = useAppContext()
   const [Inv, setinv] = useState([])
-  const filters = Ordersfilters.orderFilters
+  
 
   const [selectedProductId, setSelectedProductId] = useState('')
   const [quantity, setQuantity] = useState('')

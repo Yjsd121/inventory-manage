@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useAppContext } from "../context/TrialContext"
-import productsfilters from '../mocks/ProductsFilters.json'
+import { productFilters } from '../static/ProductsFilters.js'
 
 export function PModal() {
   const { setshowmodal } = useAppContext()
-  const filters = productsfilters.productFilters
+  
 
   const [formData, setFormData] = useState({
     name: '',
@@ -43,7 +43,7 @@ export function PModal() {
 
         <div id="products" className='modal-info'>
           {
-            Object.entries(filters).map(([filtername, options]) => (
+            Object.entries(productFilters).map(([filtername, options]) => (
               <div key={filtername} >
                 <h3>{filtername} </h3>
 

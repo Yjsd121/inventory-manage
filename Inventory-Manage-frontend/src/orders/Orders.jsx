@@ -1,9 +1,8 @@
 import './Orders.css'
 import { useAppContext } from '../context/TrialContext'
 import { SearchBar } from '../components/SearchBar/searchbar'
-import orderFilterss from '../mocks/Ordersfilters.json'
+import {orderFilters} from '../static/Ordersfilters.js'
 
-import ordersfiltros from '../mocks/Ordersfilters.json'
 import { MiniDashboard } from '../components/CHART/MiniDashboards'
 import { BarNav } from '../components/SideBar/NavegationBar'
 import { OModal } from '../components/OrdersModal'
@@ -59,7 +58,7 @@ export function ShowOrders({ endpoint }) {
       <div className="Right">
         <div className="content">
           <MiniDashboard valor='orders' />
-          <SearchBar endpoint={'orders'} filters={orderFilterss.orderFilters} />
+          <SearchBar endpoint={'orders'} filters={orderFilters} />
           <section className='orders'>
             <div className='ShowElements Orders'>
               <Orders orderss={SelectedData} selectedfilters={selectedfilters} />
@@ -68,7 +67,7 @@ export function ShowOrders({ endpoint }) {
         </div>
       </div>
       {
-        showmodal && <OModal filter={orderFilterss.orderFilters} />
+        showmodal && <OModal />
       }
     </main>
   )
