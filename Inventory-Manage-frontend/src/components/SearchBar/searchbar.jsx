@@ -71,7 +71,6 @@ export function SearchBar({ endpoint, filters }) {
   }, [Flag, endpoint])
 
   const handleSetfilter = () => {
-
     fetch(`http://localhost:3000/${endpoint}?search=${inputref.current.value}`)
       .then(res => {
         if (!res.ok) {
@@ -84,7 +83,6 @@ export function SearchBar({ endpoint, filters }) {
         setselectedData(value)
       })
       .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
-
   }
 
   return (

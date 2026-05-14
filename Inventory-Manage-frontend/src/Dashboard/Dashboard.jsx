@@ -6,7 +6,7 @@ import { MiniDashboard } from '../components/CHART/MiniDashboards'
 
 export function Dashboard() {
 
-  const data = useChartData('Dashboard')
+  const data = useChartData('Dashboard') 
 
   return (
     <main>
