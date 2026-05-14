@@ -4,7 +4,6 @@ import { productFilters } from '../static/ProductsFilters.js'
 
 export function PModal() {
   const { setshowmodal } = useAppContext()
-  
 
   const [formData, setFormData] = useState({
     name: '',
@@ -42,55 +41,56 @@ export function PModal() {
         </div>
 
         <div id="products" className='modal-info'>
-          {
-            Object.entries(productFilters).map(([filtername, options]) => (
-              <div key={filtername} >
-                <h3>{filtername} </h3>
 
-                <select
-                  className="custom-select"
-                  style={{ "width": "200px" }}
-                  value={formData[filtername] || ''}
-                  onChange={(e) => handleChange(filtername, e.target.value)}
+          <select
+            className="custom-select"
+            style={{
+              "width": "100%",
+              "height": "42px"
+            }}
 
-                >
+          >
+            {
+              productFilters.categories.map(item => (
+                <option key={item} value={item}>{item}</option>
+              ))
+            }
 
-                  {
-                    options.map(option => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))
-                  }
-                </select>
+          </select>
 
-              </div>
-            ))
-          }
 
           <div >
             <h3>Quantity</h3>
             <input
-              style={{ "width": "200px" }}
+              type="number"
               value={formData.quantity}
               onChange={(e) => handleChange('quantity', e.target.value)}
+              min={0}
+              placeholder="0"
             />
           </div>
 
           <div>
             <h3>Price</h3>
             <input
-              style={{ "width": "200px" }}
+              type="number"
+              placeholder="0.00"
+              min={0}
               value={formData.price}
               onChange={(e) => handleChange('price', e.target.value)}
             />
           </div>
 
+
+        </div>
+        <div id="products" className="modal-info">
           <button onClick={() => setshowmodal(false)}>Cancel</button>
           <button onClick={handleSubmit}>Add</button>
         </div>
 
       </div>
-    </section>
+
+
+    </section >
   )
 }

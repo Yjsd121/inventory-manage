@@ -6,7 +6,7 @@ export const AppProvider = ({ children }) => {
   const [selectedfilters, setFilters] = useState({})
   const [SelectedData, setselectedData] = useState({})
   const [showmodal, setshowmodal] = useState(false)
-
+  const [search, setsearch] = useState('')
 
   return (
     <AppContext.Provider value={{
@@ -15,7 +15,9 @@ export const AppProvider = ({ children }) => {
       SelectedData,
       setselectedData,
       showmodal,
-      setshowmodal
+      setshowmodal,
+      search,
+      setsearch
     }}>
       {children}
     </AppContext.Provider>

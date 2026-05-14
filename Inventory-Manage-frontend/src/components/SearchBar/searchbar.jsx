@@ -1,5 +1,5 @@
 import './searchbar.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useAppContext } from '../../context/TrialContext'
 
 function Listfilter({ filter, values, onChange }) {
@@ -31,7 +31,12 @@ function Listfilter({ filter, values, onChange }) {
 
 export function SearchBar({ endpoint, filters }) {
   const [Flag, setFlag] = useState(true)
-  const { selectedfilters, setFilters, setselectedData } = useAppContext()
+  const { selectedfilters, setFilters, setselectedData, search, setsearch } = useAppContext()
+  const inputref = useRef(null)
+
+  useEffect(() => {
+    console.log(search)
+  }, [search])
 
   useEffect(() => {
     const initialFilters = {}
@@ -66,8 +71,20 @@ export function SearchBar({ endpoint, filters }) {
   }, [Flag, endpoint])
 
   const handleSetfilter = () => {
-    setFlag(!Flag)
-    setFilters({})
+
+    fetch(`http://localhost:3000/${endpoint}?search=${inputref.current.value}`)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Server error")
+        }
+        return res.json()
+      })
+      .then(data => {
+        const value = Object.values(data)[0]
+        setselectedData(value)
+      })
+      .catch(error => console.log("AQUI HAY UN GRAN ERROR", error))
+
   }
 
   return (
@@ -79,10 +96,9 @@ export function SearchBar({ endpoint, filters }) {
       />
 
       <div className='search'>
-        <input type='text' className='input' />
+        <input ref={inputref} type='text' className='input' onChange={(e) => { setsearch(e.target.value) }} />
         <button onClick={handleSetfilter}>Search</button>
       </div>
-
     </section>
   )
 }
