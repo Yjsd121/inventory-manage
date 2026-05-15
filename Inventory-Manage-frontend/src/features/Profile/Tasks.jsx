@@ -1,4 +1,4 @@
-import task from '../mocks/Task.json'
+import task from '../../mocks/Task.json'
 
 export function Tasks() {
   return (

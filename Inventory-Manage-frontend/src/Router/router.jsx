@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Dashboard } from "../Dashboard/Dashboard";
-import { ShowCards } from "../Products/Cards";
-import { ShowOrders } from "../orders/Orders";
-import { Profileview } from "../Profile/profile";
+import { Dashboard } from "../features/Dashboard/Dashboard";
+import { ShowCards } from "../features/Products/Cards";
+import { ShowOrders } from "../features/orders/Orders";
+import { Profileview } from "../features/Profile/profile";
 
 export function AppRouter() {
   return (

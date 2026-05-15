@@ -1,8 +1,8 @@
 import './minidash.css'
-import { KipsMap } from '../../utils/kips'
-import { useChartData } from '../../utils/Datachats'
+import { KipsMap } from '../../../utils/kips'
+import { useChartData } from '../../../utils/Datachats'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import { useAppContext } from '../../context/TrialContext';
+import { useAppContext } from '../../../context/TrialContext';
 
 export function MiniDashboard({ valor }) {
   const data = useChartData(`Kips/${valor}`)

@@ -1,11 +1,11 @@
 import './Orders.css'
-import { useAppContext } from '../context/TrialContext'
-import { SearchBar } from '../components/SearchBar/searchbar'
-import {orderFilters} from '../static/Ordersfilters.js'
+import { useAppContext } from '../../context/TrialContext.jsx'
+import { SearchBar } from '../../components/ui/SearchBar/searchbar.jsx'
+import {orderFilters} from '../../static/Ordersfilters.js'
 
-import { MiniDashboard } from '../components/CHART/MiniDashboards'
-import { BarNav } from '../components/SideBar/NavegationBar'
-import { OModal } from '../components/OrdersModal'
+import { MiniDashboard } from '../../components/ui/CHART/MiniDashboards.jsx'
+import { BarNav } from '../../components/ui/SideBar/NavegationBar.jsx'
+import { OModal } from '../../components/OrdersModal.jsx'
 
 export function Orderlist({ orderss, selectedfilters }) {
   return (

@@ -1,8 +1,8 @@
 import './Dashboard.css'
-import MyChart from './charts/barchar'
-import { useChartData } from '../utils/Datachats'
-import { BarNav } from '../components/SideBar/NavegationBar'
-import { MiniDashboard } from '../components/CHART/MiniDashboards'
+import MyChart from '../../components/charts/barchar'
+import { useChartData } from '../../utils/Datachats'
+import { BarNav } from '../../components/ui/SideBar/NavegationBar'
+import { MiniDashboard } from '../../components/ui/CHART/MiniDashboards'
 
 export function Dashboard() {
 

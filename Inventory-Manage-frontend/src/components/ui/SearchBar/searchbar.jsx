@@ -1,6 +1,6 @@
 import './searchbar.css'
 import { useState, useEffect, useRef } from 'react'
-import { useAppContext } from '../../context/TrialContext'
+import { useAppContext } from '../../../context/TrialContext'
 
 function Listfilter({ filter, values, onChange }) {
   return (

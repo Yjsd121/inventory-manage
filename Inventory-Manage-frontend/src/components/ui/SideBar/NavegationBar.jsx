@@ -9,7 +9,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 
-import { usePagesContext } from '../../context/pagesContext';
+import { usePagesContext } from '../../../context/pagesContext';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 

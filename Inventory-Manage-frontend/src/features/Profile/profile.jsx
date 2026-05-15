@@ -1,5 +1,5 @@
 import './profile.css'
-import { BarNav } from '../components/SideBar/NavegationBar'
+import { BarNav } from '../../components/ui/SideBar/NavegationBar'
 import { Tasks } from './Tasks'
 
 

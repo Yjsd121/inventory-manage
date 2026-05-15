@@ -1,13 +1,13 @@
 import './Cards.css'
-import { useAppContext } from '../context/TrialContext'
+import { useAppContext } from '../../context/TrialContext.jsx'
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
-import { MiniDashboard } from '../components/CHART/MiniDashboards';
+import { MiniDashboard } from '../../components/ui/CHART/MiniDashboards.jsx';
 
-import { BarNav } from '../components/SideBar/NavegationBar';
-import { SearchBar } from '../components/SearchBar/searchbar';
-import { productFilters } from '../static/ProductsFilters.js'
-import { PModal } from '../components/ProductsModal';
+import { BarNav } from '../../components/ui/SideBar/NavegationBar.jsx';
+import { SearchBar } from '../../components/ui/SearchBar/searchbar.jsx';
+import { productFilters } from '../../static/ProductsFilters.js'
+import { PModal } from '../../components/ProductsModal.jsx';
 
 function Cards({ Item, selectedfilters }) {
   const { search } = useAppContext()
