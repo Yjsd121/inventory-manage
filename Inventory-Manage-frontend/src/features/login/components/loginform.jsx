@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 export function Login_form() {
+
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -45,6 +47,7 @@ export function Login_form() {
           onChange={handleChange}
         />
       </div>
+
       <div className="entry-container">
         <input type="checkbox" /> <p> Remember me</p>
         <a>forgot password?</a>
@@ -53,7 +56,7 @@ export function Login_form() {
       <button type="submit" style={{ "width": "100%", "backgroundColor": "#386bf8", "color": "white" }}>
         Login
       </button>
-    </form>
 
+    </form>
   )
 }

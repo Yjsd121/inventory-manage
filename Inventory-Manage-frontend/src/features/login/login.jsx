@@ -10,15 +10,16 @@ export function Login() {
   const btncolor = !watch ? "blue" : "green"
   return (
     <section className="login-container">
-      < img style={{ "width": "100px" }} src="/public/react.svg" />
+      <img style={{ "width": "100px" }} src="/public/react.svg" />
       <h2>Inv Manage</h2>
       <section className="auth-container">
         {!watch
           &&
-          <Login_form />}
-        {watch &&
+          <Login_form />
+        }
+        {watch
+          &&
           <Register_form />
-
         }
         <a onClick={() => { setwatch(!watch) }}>{watch ? "Login" : "Sign up"}</a>
       </section>
