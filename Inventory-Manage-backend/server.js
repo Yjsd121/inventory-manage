@@ -6,7 +6,9 @@ const app = express()
 const port = 3000
 
 app.use(cors())
+app.use(express.json())
 
+app.use('/register', require('./routes/register.routes'))
 app.use('/products', require('./routes/products.routes'))
 app.use('/orders', require('./routes/orders.routes'))
 app.use('/dashboard', require('./routes/dashboard.routes'))

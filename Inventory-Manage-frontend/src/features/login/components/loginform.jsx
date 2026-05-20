@@ -1,7 +1,9 @@
+import { getInputAdornmentUtilityClass } from "@mui/material/InputAdornment";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom"
 
 export function Login_form() {
-
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -17,7 +19,9 @@ export function Login_form() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(formData);
+    if (formData.email == "yadetjsd@gmail.com" && formData.password == 'admin') {
+      navigate('/dashboard')
+    }
 
   }
   return (

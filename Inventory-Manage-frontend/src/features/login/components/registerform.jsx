@@ -6,7 +6,7 @@ export function Register_form() {
     lastnames: "",
     email: "",
     password: "",
-    confirm_password: ""
+    confirmpassword: ""
   })
   function handleChange(e) {
     setFormData({
@@ -17,8 +17,24 @@ export function Register_form() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(formData);
+    if (formData.password != formData.confirmpassword) {
+      return
+    }
 
+    console.log(formData)
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        names: formData.names,
+        lastnames: formData.lastnames,
+        email: formData.email,
+        password: formData.password,
+        confirmpassword: formData.confirmpassword
+      })
+    })
   }
   return (
     <form
@@ -63,9 +79,9 @@ export function Register_form() {
         <input
           className="input"
           type="password"
-          name="confirm_password"
+          name="confirmpassword"
           placeholder="confirm passwoord"
-          value={formData.confirm_password}
+          value={formData.confirmpassword}
           onChange={handleChange}
         />
       </div>

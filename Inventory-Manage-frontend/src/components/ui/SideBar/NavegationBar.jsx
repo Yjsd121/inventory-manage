@@ -26,7 +26,7 @@ export function BarNav() {
       <nav className='nav'>
         <div className='bar'>
           <ul>
-            <NavLink to='/'>
+            <NavLink to='/dashboard'>
               <li className={`navlink `} >
                 <DashboardOutlinedIcon />
                 <span className={show ? "text" : "text hide"}>Dashboard</span>
