@@ -16,10 +16,23 @@ export function Login_form() {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    if (formData.email == "yadetjsd@gmail.com" && formData.password == 'admin') {
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password
+      })
+    })
+
+    const token = await response.json()
+    
+    if(token.token){
       navigate('/dashboard')
     }
 

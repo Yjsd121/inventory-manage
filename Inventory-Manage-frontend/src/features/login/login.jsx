@@ -20,7 +20,7 @@ export function Login() {
         {watch
           &&
           <Register_form />
-        }
+        } 
         <a onClick={() => { setwatch(!watch) }}>{watch ? "Login" : "Sign up"}</a>
       </section>
     </section >

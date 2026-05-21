@@ -12,8 +12,7 @@ exports.registerUser = async (req, res) => {
     }
     const hashpass = await bcrypt.hash(password, 10)
 
-    console.log(names, lastnames, email, hashpass)
-    await registerservice.insertUser(1,
+    await registerservice.insertUser(
       names,
       lastnames,
       email,
