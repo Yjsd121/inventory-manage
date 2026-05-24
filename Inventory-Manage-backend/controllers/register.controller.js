@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 exports.registerUser = async (req, res) => {
   try {
     const { names, lastnames, email, password, confirmpassword } = req.body
+
     if (password !== confirmpassword) {
       return res.status(400).json({
         ok: false,

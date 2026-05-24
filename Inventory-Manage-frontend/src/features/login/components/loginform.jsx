@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from "react-router-dom"
 
 export function Login_form() {
   const navigate = useNavigate()
+  const [wrongpass, setwrongpass] = useState(true)
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -31,9 +32,11 @@ export function Login_form() {
     })
 
     const token = await response.json()
-    
-    if(token.token){
+
+    if (token.token) {
       navigate('/dashboard')
+    } else {
+      setwrongpass(token)
     }
 
   }
@@ -64,7 +67,11 @@ export function Login_form() {
           onChange={handleChange}
         />
       </div>
-
+      {
+        !wrongpass && <div className="wrongpass">
+          <p>Contraseña incorrecta</p>
+        </div>
+      }
       <div className="entry-container">
         <input type="checkbox" /> <p> Remember me</p>
         <a>forgot password?</a>

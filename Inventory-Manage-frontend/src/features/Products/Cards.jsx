@@ -8,9 +8,11 @@ import { BarNav } from '../../components/ui/SideBar/NavegationBar.jsx';
 import { SearchBar } from '../../components/ui/SearchBar/searchbar.jsx';
 import { productFilters } from '../../static/ProductsFilters.js'
 import { PModal } from '../../components/ProductsModal.jsx';
+import { Umodal } from '../../components/Modal.jsx';
 
 function Cards({ Item, selectedfilters }) {
   const { search } = useAppContext()
+
   return (
     <ul className='inventario'>
       {
@@ -30,7 +32,7 @@ function Cards({ Item, selectedfilters }) {
                 <p>${item.Price}</p>
 
                 <div className='actions'>
-                  <button id='edit'><ModeEditOutlinedIcon /> Edit </button>
+                  <button  id='edit'><ModeEditOutlinedIcon /> Edit </button>
                   <button id='delete'><DeleteForeverOutlinedIcon /> Delete</button>
                 </div>
               </div>
@@ -63,7 +65,7 @@ export function ShowCards() {
               </div>
             </div>
             {
-              showmodal && <PModal />
+              showmodal && <Umodal><PModal /></Umodal>
             }
           </div>
         </div>

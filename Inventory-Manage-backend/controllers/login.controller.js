@@ -6,7 +6,6 @@ exports.authlogin = async (req, res) => {
   try {
     const { email, password } = req.body
     const user = await loginser.getusers(email)
-    const validation = await bcrypt.compare(password, user[0].User_pass)
 
     if (user.length === 0) {
       return res.status(404).json({
@@ -14,26 +13,25 @@ exports.authlogin = async (req, res) => {
         message: 'usuario no encontrado'
       })
     }
-
+    const validation = await bcrypt.compare(password, user[0].User_pass)
+    console.log(validation)
     if (validation === false) {
-      res.status(404).json({
-        ok: false,
-        message: 'contraseña incorrecta'
+      res.send(validation)
+    } else {
+      const token = jwt.sign({
+        id: user[0].ClientID,
+        email: user[0].User_email
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: '1h'
+      }
+      )
+      return res.json({
+        ok: true,
+        token
       })
     }
-    const token = jwt.sign({
-      id: user[0].ClientID,
-      email: user[0].User_email
-    },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: '1h'
-    }
-    )
-    return res.json({
-      ok: true,
-      token
-    })
   } catch (err) {
     console.log(err)
   }

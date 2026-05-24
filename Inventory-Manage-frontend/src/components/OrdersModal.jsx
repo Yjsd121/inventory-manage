@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useAppContext } from "../context/TrialContext"
-import {orderFilters} from '../static/Ordersfilters.js'
+import { orderFilters } from '../static/Ordersfilters.js'
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
 export function OModal() {
   const { showmodal, setshowmodal } = useAppContext()
   const [Inv, setinv] = useState([])
-  
+
 
   const [selectedProductId, setSelectedProductId] = useState('')
   const [quantity, setQuantity] = useState('')
@@ -68,79 +68,77 @@ export function OModal() {
 
 
   return (
-    <section className='overlay'>
-      <div className='modal-container'>
+    <>
 
-        <div className='modal-head'>
-          <h2>Add New</h2>
-          <p>Fill the information to create a new product</p>
+      <div className='modal-head'>
+        <h2>Add New</h2>
+        <p>Fill the information to create a new product</p>
 
-          <h3>Name</h3>
-          <input
-            value={formData.name}
-            onChange={(e) => handleChange('name', e.target.value)}
-          />
-        </div>
-
-
-        <div id="orders" className="modal-info">
-          <select
-            className="custom-select"
-            value={selectedProductId}
-            onChange={(e) => setSelectedProductId(e.target.value)}
-          >
-            <option value="">Select product</option>
-
-            {Inv.map(item => (
-              <option key={item.Id} value={item.Id}>
-                {item.Name} C${item.Price}
-              </option>
-            ))}
-          </select>
-
-          <input
-            type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-            min={0}
-
-          />
-
-          <button
-            type="button"
-            className="btn-sin-efectos"
-            onClick={handleAddProduct}
-          >
-            <AddBoxIcon />
-          </button>
-        </div>
-        <div className="order-list">
-          {orderList.map((item, index) => (
-            <div key={`${item.id}-${index}`} className="orderlist">
-              <p>
-                {item.name}
-              </p>
-              <p>
-                type {item.Category}
-              </p>
-              <p>
-                Quantity: {item.quantity}
-              </p>
-              <p>
-                Price: C${item.price}
-              </p>
-            </div>
-          ))}
-        </div>
-
-
-        <div id="orders" className="modal-info">
-
-          <button onClick={() => setshowmodal(false)}>Cancel</button>
-          <button onClick={handleSubmit}>Add</button>
-        </div>
-
+        <h3>Name</h3>
+        <input
+          value={formData.name}
+          onChange={(e) => handleChange('name', e.target.value)}
+        />
       </div>
-    </section>
+
+
+      <div id="orders" className="modal-info">
+        <select
+          className="custom-select"
+          value={selectedProductId}
+          onChange={(e) => setSelectedProductId(e.target.value)}
+        >
+          <option value="">Select product</option>
+
+          {Inv.map(item => (
+            <option key={item.Id} value={item.Id}>
+              {item.Name} C${item.Price}
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="number"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+          min={0}
+
+        />
+
+        <button
+          type="button"
+          className="btn-sin-efectos"
+          onClick={handleAddProduct}
+        >
+          <AddBoxIcon />
+        </button>
+      </div>
+      <div className="order-list">
+        {orderList.map((item, index) => (
+          <div key={`${item.id}-${index}`} className="orderlist">
+            <p>
+              {item.name}
+            </p>
+            <p>
+              type {item.Category}
+            </p>
+            <p>
+              Quantity: {item.quantity}
+            </p>
+            <p>
+              Price: C${item.price}
+            </p>
+          </div>
+        ))}
+      </div>
+
+
+      <div id="orders" className="modal-info">
+
+        <button onClick={() => setshowmodal(false)}>Cancel</button>
+        <button onClick={handleSubmit}>Add</button>
+      </div>
+
+    </>
   )
 }

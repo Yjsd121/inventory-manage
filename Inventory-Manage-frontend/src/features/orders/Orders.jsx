@@ -1,15 +1,16 @@
 import './Orders.css'
 import { useAppContext } from '../../context/TrialContext.jsx'
 import { SearchBar } from '../../components/ui/SearchBar/searchbar.jsx'
-import {orderFilters} from '../../static/Ordersfilters.js'
+import { orderFilters } from '../../static/Ordersfilters.js'
 
 import { MiniDashboard } from '../../components/ui/CHART/MiniDashboards.jsx'
 import { BarNav } from '../../components/ui/SideBar/NavegationBar.jsx'
 import { OModal } from '../../components/OrdersModal.jsx'
+import { Umodal } from '../../components/Modal.jsx'
 
 export function Orderlist({ orderss, selectedfilters }) {
   return (
-    
+
     orderss.filter(order => {
       return ((order.Status === selectedfilters.status || selectedfilters.status === 'all') &&
         (order.Price === selectedfilters.Price || selectedfilters.Price === 'all'))
@@ -67,7 +68,7 @@ export function ShowOrders({ endpoint }) {
         </div>
       </div>
       {
-        showmodal && <OModal />
+        showmodal && <Umodal><OModal /></Umodal>
       }
     </main>
   )
