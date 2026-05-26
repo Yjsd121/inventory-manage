@@ -22,7 +22,7 @@ export function Register_form() {
     }
 
     console.log(formData)
-    fetch('http://localhost:3000/register', {
+    fetch('http://localhost:3000/Auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -20,7 +20,7 @@ export function Login_form() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('http://localhost:3000/Auth/login', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +32,7 @@ export function Login_form() {
     })
 
     const token = await response.json()
+    localStorage.setItem('token', token.token)
 
     if (token.token) {
       navigate('/dashboard')

@@ -81,7 +81,6 @@
 
 .nav li:hover {
   cursor: pointer;
-  background: linear-gradient(90deg, rgba(8, 37, 129, 0.1), transparent);
   transform: translateX(4px);
 }
 

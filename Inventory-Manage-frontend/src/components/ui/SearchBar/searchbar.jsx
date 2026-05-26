@@ -33,7 +33,7 @@ export function SearchBar({ endpoint, filters }) {
   const [Flag, setFlag] = useState(true)
   const { selectedfilters, setFilters, setselectedData, search, setsearch } = useAppContext()
   const inputref = useRef(null)
-
+  const token = localStorage.getItem('token')
   useEffect(() => {
     console.log(search)
   }, [search])
@@ -56,7 +56,13 @@ export function SearchBar({ endpoint, filters }) {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:3000/${endpoint}`)
+    fetch(`http://localhost:3000/${endpoint}`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`
+      },
+    })
       .then(res => {
         if (!res.ok) {
           throw new Error("Server error")
@@ -71,7 +77,13 @@ export function SearchBar({ endpoint, filters }) {
   }, [Flag, endpoint])
 
   const handleSetfilter = () => {
-    fetch(`http://localhost:3000/${endpoint}?search=${inputref.current.value}`)
+    fetch(`http://localhost:3000/${endpoint}?search=${inputref.current.value}`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`
+      },
+    })
       .then(res => {
         if (!res.ok) {
           throw new Error("Server error")

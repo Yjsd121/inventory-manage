@@ -32,7 +32,7 @@ function Cards({ Item, selectedfilters }) {
                 <p>${item.Price}</p>
 
                 <div className='actions'>
-                  <button  id='edit'><ModeEditOutlinedIcon /> Edit </button>
+                  <button id='edit'><ModeEditOutlinedIcon /> Edit </button>
                   <button id='delete'><DeleteForeverOutlinedIcon /> Delete</button>
                 </div>
               </div>
