@@ -5,8 +5,15 @@ main {
   width: 100vw;
 }
 
+button.btn-sin-efectos {
+  width: 80px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
 .searching input {
-  height: 30px;
+  height: 42px;
   padding: 0 15px;
   width: 200px;
   border-radius: 20px;
@@ -27,10 +34,8 @@ main {
 }
 
 .content {
-  padding: 20px;
+  padding: 10px;
 }
-
-
 
 .overlay {
   position: fixed;
@@ -50,7 +55,6 @@ main {
   padding: 30px;
   border-radius: 10px;
   z-index: 1001;
-  width: 350px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -69,7 +73,7 @@ main {
 
 .modal-container input,
 .modal-info input {
-  height: 30px;
+  height: 42px;
   padding: 3px 10px;
 
 }
@@ -78,9 +82,91 @@ main {
   width: 70px;
 }
 
-.modal-info {
+.modal-info#products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.modal-info#orders {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  gap: .25rem;
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: 200px;
+}
+
+.custom-select {
+  padding: 0 40px 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: var(--btn-color);
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.custom-select:focus {
+  border-color: #e6dede80;
+  box-shadow: 0 0 0 3px rgba(218, 220, 221, 0.25);
+}
+
+.order-list{
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.orderlist {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.9fr 0.9fr;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.orderlist p {
+  margin: 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+.orderlist p:first-child {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.orderlist p:nth-child(2) {
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+.orderlist p:nth-child(3),
+.orderlist p:nth-child(4) {
+  text-align: right;
+  font-weight: 500;
+}
+
+.orderlist:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
 }

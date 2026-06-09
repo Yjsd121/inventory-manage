@@ -1,0 +1,13 @@
+export const productFilters = {
+  "categories": [
+    "all",
+    "Books",
+    "Electronics"
+  ],
+  "status": [
+    "all",
+    "available",
+    "low_stock",
+    "out_stock"
+  ]
+}
